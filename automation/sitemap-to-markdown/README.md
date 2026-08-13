@@ -21,7 +21,7 @@ The workflow now includes a single browser-friendly **front-door form** for norm
 
 The form automatically routes URL submissions and uploaded XML submissions to the correct branch. It also handles a sitemap index such as `https://obsoglobal.com/sitemap_index.xml`: child sitemap files are fetched first, then their actual webpage URLs are expanded. The older separate URL and upload forms remain available as alternatives, and the webhook endpoints remain available for programmatic calls.
 
-For the current obsoglobal test, paste `https://obsoglobal.com/sitemap_index.xml` into the **Sitemap URL** field, set **Maximum pages** to 3–5, and choose `download` for the first review run. Do not begin with the entire index because it contains many child sitemaps and a large number of product and content URLs. The HTTP Request nodes send a browser-like User-Agent because the site returned HTTP 403 to default command-line requests.
+For the current obsoglobal test, paste `https://obsoglobal.com/sitemap_index.xml` into the **Sitemap URL** field, set **Maximum pages** to 3–5, and choose `download` for the first review run. Do not begin with the entire index because it contains many child sitemaps and a large number of product and content URLs. For a direct child-sitemap test, use `https://obsoglobal.com/part-sitemap1.xml` with `maxPages=3`; it contains actual `/part/` product pages and is routed through the child-sitemap fetch and expansion path. The HTTP Request nodes send a browser-like User-Agent because the site returned HTTP 403 to default command-line requests.
 
 
 | Form | Purpose |
