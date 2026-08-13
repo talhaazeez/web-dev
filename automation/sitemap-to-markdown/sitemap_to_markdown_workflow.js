@@ -356,10 +356,11 @@ const pathname = sourceUrl.replace(/^https?:\\/\\/[^/]+/i, '').replace(/^\\/+|\\
 const slug = pathname.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() || 'home';
 const markdown = String($json.text || $json.output || '').trim();
 const outputMode = $('Prepare Evidence-First Content Brief').item.json.outputMode || 'download';
-return { json: { sourceUrl, filename: slug + '.md', outputMode, reviewStatus: 'needs_review' }, binary: { data: { data: Buffer.from(markdown, 'utf8').toString('base64'), mimeType: 'text/markdown', fileName: slug + '.md', fileExtension: 'md' } } };`
+const isForm = ['Sitemap URL Form', 'Sitemap XML Upload Form', 'Sitemap URL or XML File Form'].some(name => { try { return $(name).isExecuted; } catch (_) { return false; } });
+return { json: { sourceUrl, filename: slug + '.md', outputMode, reviewStatus: 'needs_review', isForm }, binary: { data: { data: Buffer.from(markdown, 'utf8').toString('base64'), mimeType: 'text/markdown', fileName: slug + '.md', fileExtension: 'md' } } };`
     }
   },
-  output: [{ json: { sourceUrl: 'https://example.com/page', filename: 'page.md', outputMode: 'download', reviewStatus: 'needs_review' }, binary: { data: { data: 'IyBFeGFtcGxl', mimeType: 'text/markdown', fileName: 'page.md', fileExtension: 'md' } } }]
+  output: [{ json: { sourceUrl: 'https://example.com/page', filename: 'page.md', outputMode: 'download', reviewStatus: 'needs_review', isForm: false }, binary: { data: { data: 'IyBFeGFtcGxl', mimeType: 'text/markdown', fileName: 'page.md', fileExtension: 'md' } } }]
 });
 
 const chooseOutput = node({
@@ -394,6 +395,64 @@ const uploadDrive = node({
   output: [{ json: { id: 'drive-file-id', name: 'page.md', webViewLink: 'https://drive.google.com/' } }]
 });
 
+const routeFormOrWebhook = node({
+  type: 'n8n-nodes-base.if',
+  version: 2.3,
+  config: {
+    name: 'Route Form or Webhook Response',
+    parameters: {
+      conditions: { options: { caseSensitive: true, leftValue: '', typeValidation: 'strict', version: 2 }, conditions: [{ leftValue: expr('{{ $json.isForm }}'), rightValue: true, operator: { type: 'boolean', operation: 'true' } }], combinator: 'and' }
+    }
+  },
+  output: [{ json: { isForm: true, outputMode: 'download' } }, { json: { isForm: false, outputMode: 'download' } }]
+});
+
+const chooseFormOutput = node({
+  type: 'n8n-nodes-base.if',
+  version: 2.3,
+  config: {
+    name: 'Choose Form Download or Google Drive',
+    parameters: {
+      conditions: { options: { caseSensitive: true, leftValue: '', typeValidation: 'strict', version: 2 }, conditions: [{ leftValue: expr('{{ $json.outputMode }}'), rightValue: 'drive', operator: { type: 'string', operation: 'equals' } }], combinator: 'and' }
+    }
+  },
+  output: [{ json: { outputMode: 'drive', isForm: true } }, { json: { outputMode: 'download', isForm: true } }]
+});
+
+const uploadFormDrive = node({
+  type: 'n8n-nodes-base.googleDrive',
+  version: 3,
+  config: {
+    name: 'Upload Form Markdown to Google Drive',
+    parameters: {
+      resource: 'file', operation: 'upload', authentication: 'oAuth2', inputDataFieldName: 'data', name: expr('{{ $binary.data.fileName }}'),
+      driveId: { __rl: true, mode: 'list', value: 'My Drive' }, folderId: { __rl: true, mode: 'list', value: 'root', cachedResultName: '/ (Root folder)' }, simplifyOutput: true
+    },
+    credentials: { googleDriveOAuth2Api: newCredential('Google Drive account') }
+  },
+  output: [{ json: { id: 'drive-file-id', name: 'page.md', webViewLink: 'https://drive.google.com/' } }]
+});
+
+const formEndingDownload = node({
+  type: 'n8n-nodes-base.form',
+  version: 2.5,
+  config: {
+    name: 'Form Ending - Markdown Download',
+    parameters: { operation: 'completion', respondWith: 'returnBinary', completionTitle: 'Markdown draft ready', completionMessage: 'Your Markdown draft has been generated and is being returned as a download.', inputDataFieldName: 'data' }
+  },
+  output: [{ json: { completed: true }, binary: { data: { data: 'IyBFeGFtcGxl', mimeType: 'text/markdown', fileName: 'page.md', fileExtension: 'md' } } }]
+});
+
+const formEndingDrive = node({
+  type: 'n8n-nodes-base.form',
+  version: 2.5,
+  config: {
+    name: 'Form Ending - Google Drive Confirmation',
+    parameters: { operation: 'completion', respondWith: 'text', completionTitle: 'Markdown draft saved', completionMessage: 'Your Markdown draft has been uploaded to Google Drive for review.' }
+  },
+  output: [{ json: { completed: true } }]
+});
+
 const returnDownload = node({
   type: 'n8n-nodes-base.respondToWebhook',
   version: 1.5,
@@ -412,7 +471,7 @@ export default workflow('sitemap-to-markdown', 'Sitemap to Google-Friendly Markd
   .to(preparePrompt)
   .to(generateMarkdown)
   .to(makeFile)
-  .to(chooseOutput)
+  .to(routeFormOrWebhook)
   .add(uploadIntake)
   .to(expandUploadedSitemap)
   .to(fetchPage)
@@ -434,6 +493,13 @@ export default workflow('sitemap-to-markdown', 'Sitemap to Google-Friendly Markd
   .add(returnDownload)
   .add(chooseOutput.output(0).to(uploadDrive))
   .add(chooseOutput.output(1).to(returnDownload))
+  .add(routeFormOrWebhook.output(0).to(chooseFormOutput))
+  .add(routeFormOrWebhook.output(1).to(chooseOutput))
+  .add(chooseFormOutput.output(0).to(uploadFormDrive).to(formEndingDrive))
+  .add(chooseFormOutput.output(1).to(formEndingDownload))
+  .add(formEndingDownload)
+  .add(formEndingDrive)
+  .add(uploadFormDrive)
   .add(routeCombinedInput.output(0).to(fetchSitemap))
   .add(routeCombinedInput.output(1).to(expandCombinedUploadedSitemap))
   .add(routeChildSitemap.output(0).to(fetchChildSitemap))

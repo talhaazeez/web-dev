@@ -17,9 +17,9 @@ The workflow now includes a single browser-friendly **front-door form** for norm
 | --- | --- |
 | Sitemap URL | Paste the complete public URL, such as `https://example.com/sitemap.xml`, into `Sitemap URL`. |
 | XML file | Select the local `sitemap.xml` file in `Upload sitemap.xml`. |
-| Output choice | Select `download` to return a Markdown file or `drive` to upload it to Google Drive. |
+| Output choice | Select `download` to show a Form Ending page with the Markdown file download, or `drive` to upload it to Google Drive and show a completion confirmation. |
 
-The form automatically routes URL submissions and uploaded XML submissions to the correct branch. It also handles a sitemap index such as `https://obsoglobal.com/sitemap_index.xml`: child sitemap files are fetched first, then their actual webpage URLs are expanded. The older separate URL and upload forms remain available as alternatives, and the webhook endpoints remain available for programmatic calls.
+The form automatically routes URL submissions and uploaded XML submissions to the correct branch. It also handles a sitemap index such as `https://obsoglobal.com/sitemap_index.xml`: child sitemap files are fetched first, then their actual webpage URLs are expanded. Form-triggered runs now end through n8n Form nodes configured as **Form Ending** pages. They do not use `Respond to Webhook`. The older separate URL and upload forms remain available as alternatives, and the webhook endpoints remain available for programmatic calls.
 
 For the current obsoglobal test, paste `https://obsoglobal.com/sitemap_index.xml` into the **Sitemap URL** field, set **Maximum pages** to 3–5, and choose `download` for the first review run. Do not begin with the entire index because it contains many child sitemaps and a large number of product and content URLs. For a direct child-sitemap test, use `https://obsoglobal.com/part-sitemap1.xml` with `maxPages=3`; it contains actual `/part/` product pages and is routed through the child-sitemap fetch and expansion path. The HTTP Request nodes send a browser-like User-Agent because the site returned HTTP 403 to default command-line requests. The Markdown generation step uses the available Google Gemini credential and `models/gemini-3-flash-preview`.
 
@@ -31,7 +31,7 @@ A controlled three-page webhook test completed successfully as n8n execution `11
 | `sitemap-to-markdown/form/url` | Enter a sitemap URL, maximum page count, and output mode. |
 | `sitemap-to-markdown/form/upload` | Upload an XML sitemap file, maximum page count, and output mode. |
 
-The forms provide these fields:
+Form submissions use the following fields and finish on a Form Ending page rather than a webhook response node:
 
 | Field | Meaning |
 | --- | --- |
@@ -47,7 +47,7 @@ The workflow exposes two POST webhook inputs:
 | Sitemap URL | `/webhook/sitemap-to-markdown/url` | JSON containing `sitemapUrl`, optional `maxPages`, and `outputMode`. |
 | Uploaded XML | `/webhook/sitemap-to-markdown/upload` | Multipart upload with the XML in binary field `data`, plus optional JSON fields. |
 
-Use `outputMode: "download"` to return the generated `.md` file to the caller. Use `outputMode: "drive"` to upload the file to Google Drive. The default limit is 10 pages, and the workflow caps a single request at 100 pages to reduce accidental bulk generation.
+Use `outputMode: "download"` on a form to receive the generated `.md` file through the Form Ending page. Use `outputMode: "drive"` on a form to upload the file to Google Drive and receive a completion message. Webhook/API requests still use `Respond to Webhook` for `outputMode: "download"` and retain the programmatic response behavior. The default limit is 10 pages, and the workflow caps a single request at 100 pages to reduce accidental bulk generation.
 
 Example URL request:
 
@@ -69,7 +69,7 @@ curl -X POST 'https://YOUR_N8N_HOST/webhook/sitemap-to-markdown/upload' \
 
 ## n8n setup
 
-Import or create the workflow from `sitemap_to_markdown_workflow.js`. Attach an OpenAI credential to the generation node and a Google Drive OAuth credential to the Drive upload node. The HTTP Request nodes do not require credentials for public sitemap and webpage URLs; private websites should be configured separately with an approved authentication method.
+Import or create the workflow from `sitemap_to_markdown_workflow.js`. The generation node uses the configured Google Gemini credential, and the Drive upload nodes use the Google Drive OAuth credential. Form Trigger nodes are configured with `responseMode: lastNode` and terminate through Form Ending nodes; do not connect a Form Trigger path directly to `Respond to Webhook`. The HTTP Request nodes do not require credentials for public sitemap and webpage URLs; private websites should be configured separately with an approved authentication method.
 
 Before first production use, test with one or two URLs, inspect the extracted source content, verify the generated Markdown, and confirm the Google Drive folder. Keep the workflow inactive until credentials, rate limits, access permissions, and review steps are confirmed.
 
