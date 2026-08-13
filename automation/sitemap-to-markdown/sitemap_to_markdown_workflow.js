@@ -138,6 +138,47 @@ return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: 'upload
   output: [{ json: { url: 'https://example.com/page', sitemapSource: 'uploaded_xml', outputMode: 'download' } }]
 });
 
+const routeChildSitemap = node({
+  type: 'n8n-nodes-base.if',
+  version: 2.3,
+  config: {
+    name: 'Route Child Sitemap or Page URL',
+    parameters: {
+      conditions: { options: { caseSensitive: false, leftValue: '', typeValidation: 'strict', version: 2 }, conditions: [{ leftValue: expr('{{ $json.url }}'), rightValue: 'sitemap', operator: { type: 'string', operation: 'contains' } }], combinator: 'and' }
+    }
+  },
+  output: [{ json: { url: 'https://obsoglobal.com/post-sitemap.xml', sitemapSource: 'https://obsoglobal.com/sitemap_index.xml', outputMode: 'download' } }, { json: { url: 'https://obsoglobal.com/automation-spares-sourcing-checklist/', sitemapSource: 'https://obsoglobal.com/post-sitemap.xml', outputMode: 'download' } }]
+});
+
+const fetchChildSitemap = node({
+  type: 'n8n-nodes-base.httpRequest',
+  version: 4.5,
+  config: {
+    name: 'Fetch Child Sitemap XML',
+    parameters: { method: 'GET', url: expr('{{ $json.url }}'), options: { response: { response: { responseFormat: 'text' } }, timeout: 30000 } }
+  },
+  output: [{ json: { data: '<urlset><url><loc>https://example.com/page</loc></url></urlset>' } }]
+});
+
+const expandChildSitemap = node({
+  type: 'n8n-nodes-base.code',
+  version: 2,
+  config: {
+    name: 'Expand Child Sitemap Page URLs',
+    parameters: {
+      mode: 'runOnceForAllItems',
+      language: 'javaScript',
+      jsCode: `const item = $input.first();
+const source = $('Route Child Sitemap or Page URL').first().json;
+const xml = String(item.json.data || item.json.body || '');
+const urls = [...xml.matchAll(/<loc>\\s*([^<]+?)\\s*<\\/loc>/gi)].map(m => m[1].trim()).filter(Boolean);
+const maxPages = Math.max(1, Math.min(Number($('Sitemap URL or XML File Form').first().json.maxPages || 10), 100));
+return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: source.url, outputMode: source.outputMode || 'download' } }));`
+    }
+  },
+  output: [{ json: { url: 'https://example.com/page', sitemapSource: 'https://example.com/post-sitemap.xml', outputMode: 'download' } }]
+});
+
 const fetchSitemap = node({
   type: 'n8n-nodes-base.httpRequest',
   version: 4.5,
@@ -255,8 +296,8 @@ const preparePrompt = node({
       language: 'javaScript',
       jsCode: `const html = String($json.data || $json.body || '').slice(0, 30000);
 const source = $('Fetch Existing Webpage Content').item.json;
-const sourceUrl = $('Expand Sitemap URL Items').item.json.url || $('Expand Uploaded Sitemap XML').item.json.url || $('Expand Form Sitemap URL Items').item.json.url || $('Expand Form Uploaded Sitemap XML').item.json.url || $('Expand Combined URL Sitemap Items').item.json.url || $('Expand Combined Uploaded Sitemap XML').item.json.url;
-const outputMode = $('Expand Sitemap URL Items').item.json.outputMode || $('Expand Uploaded Sitemap XML').item.json.outputMode || $('Expand Form Sitemap URL Items').item.json.outputMode || $('Expand Form Uploaded Sitemap XML').item.json.outputMode || $('Expand Combined URL Sitemap Items').item.json.outputMode || $('Expand Combined Uploaded Sitemap XML').item.json.outputMode || 'download';
+const sourceUrl = $('Expand Sitemap URL Items').item.json.url || $('Expand Uploaded Sitemap XML').item.json.url || $('Expand Form Sitemap URL Items').item.json.url || $('Expand Form Uploaded Sitemap XML').item.json.url || $('Expand Combined URL Sitemap Items').item.json.url || $('Expand Combined Uploaded Sitemap XML').item.json.url || $('Expand Child Sitemap Page URLs').item.json.url;
+const outputMode = $('Expand Sitemap URL Items').item.json.outputMode || $('Expand Uploaded Sitemap XML').item.json.outputMode || $('Expand Form Sitemap URL Items').item.json.outputMode || $('Expand Form Uploaded Sitemap XML').item.json.outputMode || $('Expand Combined URL Sitemap Items').item.json.outputMode || $('Expand Combined Uploaded Sitemap XML').item.json.outputMode || $('Expand Child Sitemap Page URLs').item.json.outputMode || 'download';
 const title = (html.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i)?.[1] || '').replace(/<[^>]+>/g, '').trim();
 const description = (html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)/i)?.[1] || '').trim();
 const visible = html.replace(/<script[\\s\\S]*?<\\/script>/gi, ' ').replace(/<style[\\s\\S]*?<\\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim().slice(0, 12000);
@@ -370,7 +411,7 @@ export default workflow('sitemap-to-markdown', 'Sitemap to Google-Friendly Markd
   .to(routeCombinedInput)
   .add(fetchSitemap)
   .to(expandCombinedUrlSitemap)
-  .to(fetchPage)
+  .to(routeChildSitemap)
   .add(expandCombinedUploadedSitemap)
   .to(fetchPage)
   .add(uploadDrive)
@@ -378,4 +419,7 @@ export default workflow('sitemap-to-markdown', 'Sitemap to Google-Friendly Markd
   .add(chooseOutput.output(0).to(uploadDrive))
   .add(chooseOutput.output(1).to(returnDownload))
   .add(routeCombinedInput.output(0).to(fetchSitemap))
-  .add(routeCombinedInput.output(1).to(expandCombinedUploadedSitemap));
+  .add(routeCombinedInput.output(1).to(expandCombinedUploadedSitemap))
+  .add(routeChildSitemap.output(0).to(fetchChildSitemap))
+  .add(routeChildSitemap.output(1).to(fetchPage))
+  .add(fetchChildSitemap.to(expandChildSitemap).to(fetchPage));

@@ -19,7 +19,9 @@ The workflow now includes a single browser-friendly **front-door form** for norm
 | XML file | Select the local `sitemap.xml` file in `Upload sitemap.xml`. |
 | Output choice | Select `download` to return a Markdown file or `drive` to upload it to Google Drive. |
 
-The form automatically routes URL submissions and uploaded XML submissions to the correct branch. The older separate URL and upload forms remain available as alternatives, and the webhook endpoints remain available for programmatic calls.
+The form automatically routes URL submissions and uploaded XML submissions to the correct branch. It also handles a sitemap index such as `https://obsoglobal.com/sitemap_index.xml`: child sitemap files are fetched first, then their actual webpage URLs are expanded. The older separate URL and upload forms remain available as alternatives, and the webhook endpoints remain available for programmatic calls.
+
+For the current obsoglobal test, paste `https://obsoglobal.com/sitemap_index.xml` into the **Sitemap URL** field, set **Maximum pages** to 3–5, and choose `download` for the first review run. Do not begin with the entire index because it contains many child sitemaps and a large number of product and content URLs.
 
 
 | Form | Purpose |
