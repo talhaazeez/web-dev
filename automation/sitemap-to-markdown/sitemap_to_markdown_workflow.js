@@ -107,11 +107,12 @@ const expandCombinedUrlSitemap = node({
       mode: 'runOnceForAllItems',
       language: 'javaScript',
       jsCode: `const item = $input.first();
-const request = $('Sitemap URL or XML File Form').first().json;
+const readJson = (name) => { try { const n = $(name); if (!n.isExecuted) return {}; const j = n.first().json || {}; return { ...j, ...(j.body || {}) }; } catch (_) { return {}; } };
+const request = { ...readJson('Sitemap URL Intake'), ...readJson('Sitemap URL Form'), ...readJson('Sitemap URL or XML File Form') };
 const xml = String(item.json.data || item.json.body || '');
 const urls = [...xml.matchAll(/<loc>\\s*([^<]+?)\\s*<\\/loc>/gi)].map(m => m[1].trim()).filter(Boolean);
 const maxPages = Math.max(1, Math.min(Number(request.maxPages || 10), 100));
-return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: request.sitemapUrl, outputMode: request.outputMode || 'download' } }));`
+return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: request.sitemapUrl, outputMode: request.outputMode || 'download', maxPages } }));`
     }
   },
   output: [{ json: { url: 'https://example.com/page', sitemapSource: 'https://example.com/sitemap.xml', outputMode: 'download' } }]
@@ -126,7 +127,8 @@ const expandCombinedUploadedSitemap = node({
       mode: 'runOnceForAllItems',
       language: 'javaScript',
       jsCode: `const item = $input.first();
-const request = $('Sitemap URL or XML File Form').first().json;
+const readJson = (name) => { try { const n = $(name); if (!n.isExecuted) return {}; const j = n.first().json || {}; return { ...j, ...(j.body || {}) }; } catch (_) { return {}; } };
+const request = { ...readJson('Sitemap URL Intake'), ...readJson('Sitemap URL Form'), ...readJson('Sitemap URL or XML File Form') };
 const file = item.binary?.sitemapFile || item.binary?.data;
 const xml = file?.data ? Buffer.from(file.data, 'base64').toString('utf8') : String(item.json.sitemapXml || '');
 if (!xml) throw new Error('No sitemap XML file was received.');
@@ -172,8 +174,8 @@ const expandChildSitemap = node({
 const source = $('Route Child Sitemap or Page URL').first().json;
 const xml = String(item.json.data || item.json.body || '');
 const urls = [...xml.matchAll(/<loc>\\s*([^<]+?)\\s*<\\/loc>/gi)].map(m => m[1].trim()).filter(Boolean);
-const maxPages = Math.max(1, Math.min(Number($('Sitemap URL or XML File Form').first().json.maxPages || 10), 100));
-return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: source.url, outputMode: source.outputMode || 'download' } }));`
+const maxPages = Math.max(1, Math.min(Number(source.maxPages || 10), 100));
+return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: source.url, outputMode: source.outputMode || 'download', maxPages } }));`
     }
   },
   output: [{ json: { url: 'https://example.com/page', sitemapSource: 'https://example.com/post-sitemap.xml', outputMode: 'download' } }]
@@ -186,7 +188,7 @@ const fetchSitemap = node({
     name: 'Fetch Sitemap XML',
     parameters: {
       method: 'GET',
-      url: expr('{{ $json.sitemapUrl }}'),
+      url: expr('{{ $json.sitemapUrl || $json.body?.sitemapUrl }}'),
       sendHeaders: true,
       specifyHeaders: 'keypair',
       headerParameters: { parameters: [{ name: 'User-Agent', value: 'Mozilla/5.0 (compatible; SitemapMarkdownDraftBot/1.0)' }] },
@@ -205,11 +207,11 @@ const expandUrlSitemap = node({
       mode: 'runOnceForAllItems',
       language: 'javaScript',
       jsCode: `const item = $input.first();
-const request = $('Sitemap URL Intake').first().json;
+const request = { ...$('Sitemap URL Intake').first().json, ...($('Sitemap URL Intake').first().json.body || {}) };
 const xml = String(item.json.data || item.json.body || '');
 const urls = [...xml.matchAll(/<loc>\\s*([^<]+?)\\s*<\\/loc>/gi)].map(m => m[1].trim()).filter(Boolean);
 const maxPages = Math.max(1, Math.min(Number(request.maxPages || 10), 100));
-return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: request.sitemapUrl, outputMode: request.outputMode || 'download' } }));`
+return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: request.sitemapUrl, outputMode: request.outputMode || 'download', maxPages } }));`
     }
   },
   output: [{ json: { url: 'https://example.com/page', sitemapSource: 'https://example.com/sitemap.xml', outputMode: 'download' } }]
@@ -224,7 +226,7 @@ const expandUploadedSitemap = node({
       mode: 'runOnceForAllItems',
       language: 'javaScript',
       jsCode: `const item = $input.first();
-const request = $('Uploaded Sitemap XML Intake').first().json;
+const request = { ...$('Uploaded Sitemap XML Intake').first().json, ...($('Uploaded Sitemap XML Intake').first().json.body || {}) };
 const xml = item.binary?.data?.data ? Buffer.from(item.binary.data.data, 'base64').toString('utf8') : String(item.json.sitemapXml || '');
 if (!xml) throw new Error('No uploaded XML found. Send the sitemap as binary field data or JSON field sitemapXml.');
 const urls = [...xml.matchAll(/<loc>\\s*([^<]+?)\\s*<\\/loc>/gi)].map(m => m[1].trim()).filter(Boolean);
@@ -244,11 +246,12 @@ const expandFormUrlSitemap = node({
       mode: 'runOnceForAllItems',
       language: 'javaScript',
       jsCode: `const item = $input.first();
-const request = $('Sitemap URL Form').first().json;
+const readJson = (name) => { try { const n = $(name); if (!n.isExecuted) return {}; const j = n.first().json || {}; return { ...j, ...(j.body || {}) }; } catch (_) { return {}; } };
+const request = { ...readJson('Sitemap URL Form'), ...readJson('Sitemap URL or XML File Form') };
 const xml = String(item.json.data || item.json.body || '');
 const urls = [...xml.matchAll(/<loc>\\s*([^<]+?)\\s*<\\/loc>/gi)].map(m => m[1].trim()).filter(Boolean);
 const maxPages = Math.max(1, Math.min(Number(request.maxPages || 10), 100));
-return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: request.sitemapUrl, outputMode: request.outputMode || 'download' } }));`
+return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: request.sitemapUrl, outputMode: request.outputMode || 'download', maxPages } }));`
     }
   },
   output: [{ json: { url: 'https://example.com/page', sitemapSource: 'https://example.com/sitemap.xml', outputMode: 'download' } }]
@@ -263,7 +266,8 @@ const expandFormUploadedSitemap = node({
       mode: 'runOnceForAllItems',
       language: 'javaScript',
       jsCode: `const item = $input.first();
-const request = $('Sitemap XML Upload Form').first().json;
+const readJson = (name) => { try { const n = $(name); if (!n.isExecuted) return {}; const j = n.first().json || {}; return { ...j, ...(j.body || {}) }; } catch (_) { return {}; } };
+const request = { ...readJson('Sitemap XML Upload Form'), ...readJson('Sitemap URL or XML File Form') };
 const file = item.binary?.sitemapFile || item.binary?.data;
 const xml = file?.data ? Buffer.from(file.data, 'base64').toString('utf8') : String(item.json.sitemapXml || '');
 if (!xml) throw new Error('No sitemap XML file was received.');
@@ -302,8 +306,11 @@ const preparePrompt = node({
       language: 'javaScript',
       jsCode: `const html = String($json.data || $json.body || '').slice(0, 30000);
 const source = $('Fetch Existing Webpage Content').item.json;
-const sourceUrl = $('Expand Sitemap URL Items').item.json.url || $('Expand Uploaded Sitemap XML').item.json.url || $('Expand Form Sitemap URL Items').item.json.url || $('Expand Form Uploaded Sitemap XML').item.json.url || $('Expand Combined URL Sitemap Items').item.json.url || $('Expand Combined Uploaded Sitemap XML').item.json.url || $('Expand Child Sitemap Page URLs').item.json.url;
-const outputMode = $('Expand Sitemap URL Items').item.json.outputMode || $('Expand Uploaded Sitemap XML').item.json.outputMode || $('Expand Form Sitemap URL Items').item.json.outputMode || $('Expand Form Uploaded Sitemap XML').item.json.outputMode || $('Expand Combined URL Sitemap Items').item.json.outputMode || $('Expand Combined Uploaded Sitemap XML').item.json.outputMode || $('Expand Child Sitemap Page URLs').item.json.outputMode || 'download';
+const readItem = (name) => { try { const n = $(name); return n.isExecuted ? (n.first().json || {}) : {}; } catch (_) { return {}; } };
+const sourceCandidates = ['Expand Sitemap URL Items','Expand Uploaded Sitemap XML','Expand Form Sitemap URL Items','Expand Form Uploaded Sitemap XML','Expand Combined URL Sitemap Items','Expand Combined Uploaded Sitemap XML','Expand Child Sitemap Page URLs'].map(readItem).filter(x => x.url);
+const sourceMeta = sourceCandidates[0] || {};
+const sourceUrl = sourceMeta.url || '';
+const outputMode = sourceMeta.outputMode || 'download';
 const title = (html.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i)?.[1] || '').replace(/<[^>]+>/g, '').trim();
 const description = (html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)/i)?.[1] || '').trim();
 const visible = html.replace(/<script[\\s\\S]*?<\\/script>/gi, ' ').replace(/<style[\\s\\S]*?<\\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim().slice(0, 12000);
@@ -314,22 +321,24 @@ return { json: { sourceUrl, outputMode, sourceTitle: title, sourceDescription: d
 });
 
 const generateMarkdown = node({
-  type: 'n8n-nodes-base.openAi',
-  version: 1.1,
+  type: '@n8n/n8n-nodes-langchain.googleGemini',
+  version: 1.2,
   config: {
-    name: 'Generate Markdown Draft with OpenAI',
+    name: 'Generate Markdown Draft with Gemini',
     parameters: {
-      resource: 'chat',
-      operation: 'complete',
-      model: 'gpt-5-mini',
-      prompt: { messages: [
-        { role: 'system', content: 'You are an evidence-first website content editor. Output Markdown only. Never invent facts. Treat the supplied webpage as the source of truth and mark gaps for human review.' },
-        { role: 'user', content: expr('{{ $json.prompt }}') }
-      ] },
-      simplifyOutput: true,
-      options: { temperature: 0.2, maxTokens: 3000 }
+      resource: 'text',
+      operation: 'message',
+      modelId: { __rl: true, mode: 'list', value: 'models/gemini-3-flash-preview' },
+      messages: { values: [{ role: 'user', content: expr('{{ $json.prompt }}') }] },
+      simplify: true,
+      jsonOutput: false,
+      options: {
+        systemMessage: 'You are an evidence-first website content editor. Output Markdown only. Never invent facts. Treat the supplied webpage as the source of truth and mark gaps for human review.',
+        includeMergedResponse: true,
+        maxOutputTokens: 3000
+      }
     },
-    credentials: { openAiApi: newCredential('OpenAI account') }
+    credentials: { googlePalmApi: newCredential('Google Gemini(PaLM) Api account') }
   },
   output: [{ json: { text: '---\ntitle: Example page\nreview_status: needs_review\n---\n\n# Example page\n\nDraft content.' } }]
 });
@@ -343,7 +352,8 @@ const makeFile = node({
       mode: 'runOnceForEachItem',
       language: 'javaScript',
       jsCode: `const sourceUrl = $('Prepare Evidence-First Content Brief').item.json.sourceUrl;
-const slug = new URL(sourceUrl).pathname.replace(/^\\/+|\\/+$/g, '').replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() || 'home';
+const pathname = sourceUrl.replace(/^https?:\\/\\/[^/]+/i, '').replace(/^\\/+|\\/+$/g, '');
+const slug = pathname.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() || 'home';
 const markdown = String($json.text || $json.output || '').trim();
 const outputMode = $('Prepare Evidence-First Content Brief').item.json.outputMode || 'download';
 return { json: { sourceUrl, filename: slug + '.md', outputMode, reviewStatus: 'needs_review' }, binary: { data: { data: Buffer.from(markdown, 'utf8').toString('base64'), mimeType: 'text/markdown', fileName: slug + '.md', fileExtension: 'md' } } };`
