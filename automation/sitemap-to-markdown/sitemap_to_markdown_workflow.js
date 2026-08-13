@@ -155,7 +155,7 @@ const fetchChildSitemap = node({
   version: 4.5,
   config: {
     name: 'Fetch Child Sitemap XML',
-    parameters: { method: 'GET', url: expr('{{ $json.url }}'), options: { response: { response: { responseFormat: 'text' } }, timeout: 30000 } }
+    parameters: { method: 'GET', url: expr('{{ $json.url }}'), sendHeaders: true, specifyHeaders: 'keypair', headerParameters: { parameters: [{ name: 'User-Agent', value: 'Mozilla/5.0 (compatible; SitemapMarkdownDraftBot/1.0)' }] }, options: { response: { response: { responseFormat: 'text' } }, timeout: 30000 } }
   },
   output: [{ json: { data: '<urlset><url><loc>https://example.com/page</loc></url></urlset>' } }]
 });
@@ -187,6 +187,9 @@ const fetchSitemap = node({
     parameters: {
       method: 'GET',
       url: expr('{{ $json.sitemapUrl }}'),
+      sendHeaders: true,
+      specifyHeaders: 'keypair',
+      headerParameters: { parameters: [{ name: 'User-Agent', value: 'Mozilla/5.0 (compatible; SitemapMarkdownDraftBot/1.0)' }] },
       options: { response: { response: { responseFormat: 'text' } }, timeout: 30000 }
     }
   },
@@ -280,6 +283,9 @@ const fetchPage = node({
     parameters: {
       method: 'GET',
       url: expr('{{ $json.url }}'),
+      sendHeaders: true,
+      specifyHeaders: 'keypair',
+      headerParameters: { parameters: [{ name: 'User-Agent', value: 'Mozilla/5.0 (compatible; SitemapMarkdownDraftBot/1.0)' }] },
       options: { response: { response: { responseFormat: 'text' } }, timeout: 30000 }
     }
   },
