@@ -28,6 +28,44 @@ const uploadIntake = trigger({
   output: [{ json: { outputMode: 'download', maxPages: 10 }, binary: { data: { data: 'PHVybHNldD48dXJsPjxsb2M-aHR0cHM6Ly9leGFtcGxlLmNvbS9wYWdlPC9sb2M-PC91cmw-PC91cmxzZXQ-', mimeType: 'application/xml', fileName: 'sitemap.xml' } } }]
 });
 
+const urlForm = trigger({
+  type: 'n8n-nodes-base.formTrigger',
+  version: 2.6,
+  config: {
+    name: 'Sitemap URL Form',
+    parameters: {
+      formTitle: 'Create Markdown drafts from a sitemap URL',
+      formDescription: 'Enter a public sitemap URL, choose how many pages to process, and select download or Google Drive output.',
+      formFields: { values: [
+        { fieldName: 'sitemapUrl', fieldLabel: 'Sitemap URL', fieldType: 'text', requiredField: true, placeholder: 'https://example.com/sitemap.xml' },
+        { fieldName: 'maxPages', fieldLabel: 'Maximum pages to process', fieldType: 'number', requiredField: true, defaultValue: '10' },
+        { fieldName: 'outputMode', fieldLabel: 'Output mode', fieldType: 'dropdown', requiredField: true, defaultValue: 'download', fieldOptions: { values: [{ option: 'download' }, { option: 'drive' }] } }
+      ] },
+      options: { path: 'sitemap-to-markdown/form/url' }
+    }
+  },
+  output: [{ json: { sitemapUrl: 'https://example.com/sitemap.xml', maxPages: 10, outputMode: 'download' } }]
+});
+
+const uploadForm = trigger({
+  type: 'n8n-nodes-base.formTrigger',
+  version: 2.6,
+  config: {
+    name: 'Sitemap XML Upload Form',
+    parameters: {
+      formTitle: 'Upload an XML sitemap for Markdown drafts',
+      formDescription: 'Upload a sitemap XML file, choose how many pages to process, and select download or Google Drive output.',
+      formFields: { values: [
+        { fieldName: 'sitemapFile', fieldLabel: 'Sitemap XML file', fieldType: 'file', requiredField: true },
+        { fieldName: 'maxPages', fieldLabel: 'Maximum pages to process', fieldType: 'number', requiredField: true, defaultValue: '10' },
+        { fieldName: 'outputMode', fieldLabel: 'Output mode', fieldType: 'dropdown', requiredField: true, defaultValue: 'download', fieldOptions: { values: [{ option: 'download' }, { option: 'drive' }] } }
+      ] },
+      options: { path: 'sitemap-to-markdown/form/upload' }
+    }
+  },
+  output: [{ json: { maxPages: 10, outputMode: 'download' }, binary: { sitemapFile: { data: 'PHVybHNldD48L3VybHNldD4=', mimeType: 'application/xml', fileName: 'sitemap.xml' } } }]
+});
+
 const fetchSitemap = node({
   type: 'n8n-nodes-base.httpRequest',
   version: 4.5,
@@ -81,6 +119,46 @@ return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: 'upload
   output: [{ json: { url: 'https://example.com/page', sitemapSource: 'uploaded_xml', outputMode: 'download' } }]
 });
 
+const expandFormUrlSitemap = node({
+  type: 'n8n-nodes-base.code',
+  version: 2,
+  config: {
+    name: 'Expand Form Sitemap URL Items',
+    parameters: {
+      mode: 'runOnceForAllItems',
+      language: 'javaScript',
+      jsCode: `const item = $input.first();
+const request = $('Sitemap URL Form').first().json;
+const xml = String(item.json.data || item.json.body || '');
+const urls = [...xml.matchAll(/<loc>\\s*([^<]+?)\\s*<\\/loc>/gi)].map(m => m[1].trim()).filter(Boolean);
+const maxPages = Math.max(1, Math.min(Number(request.maxPages || 10), 100));
+return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: request.sitemapUrl, outputMode: request.outputMode || 'download' } }));`
+    }
+  },
+  output: [{ json: { url: 'https://example.com/page', sitemapSource: 'https://example.com/sitemap.xml', outputMode: 'download' } }]
+});
+
+const expandFormUploadedSitemap = node({
+  type: 'n8n-nodes-base.code',
+  version: 2,
+  config: {
+    name: 'Expand Form Uploaded Sitemap XML',
+    parameters: {
+      mode: 'runOnceForAllItems',
+      language: 'javaScript',
+      jsCode: `const item = $input.first();
+const request = $('Sitemap XML Upload Form').first().json;
+const file = item.binary?.sitemapFile || item.binary?.data;
+const xml = file?.data ? Buffer.from(file.data, 'base64').toString('utf8') : String(item.json.sitemapXml || '');
+if (!xml) throw new Error('No sitemap XML file was received.');
+const urls = [...xml.matchAll(/<loc>\\s*([^<]+?)\\s*<\\/loc>/gi)].map(m => m[1].trim()).filter(Boolean);
+const maxPages = Math.max(1, Math.min(Number(request.maxPages || 10), 100));
+return urls.slice(0, maxPages).map(url => ({ json: { url, sitemapSource: 'uploaded_xml', outputMode: request.outputMode || 'download' } }));`
+    }
+  },
+  output: [{ json: { url: 'https://example.com/page', sitemapSource: 'uploaded_xml', outputMode: 'download' } }]
+});
+
 const fetchPage = node({
   type: 'n8n-nodes-base.httpRequest',
   version: 4.5,
@@ -105,8 +183,8 @@ const preparePrompt = node({
       language: 'javaScript',
       jsCode: `const html = String($json.data || $json.body || '').slice(0, 30000);
 const source = $('Fetch Existing Webpage Content').item.json;
-const sourceUrl = $('Expand Sitemap URL Items').item.json.url || $('Expand Uploaded Sitemap XML').item.json.url;
-const outputMode = $('Expand Sitemap URL Items').item.json.outputMode || $('Expand Uploaded Sitemap XML').item.json.outputMode || 'download';
+const sourceUrl = $('Expand Sitemap URL Items').item.json.url || $('Expand Uploaded Sitemap XML').item.json.url || $('Expand Form Sitemap URL Items').item.json.url || $('Expand Form Uploaded Sitemap XML').item.json.url;
+const outputMode = $('Expand Sitemap URL Items').item.json.outputMode || $('Expand Uploaded Sitemap XML').item.json.outputMode || $('Expand Form Sitemap URL Items').item.json.outputMode || $('Expand Form Uploaded Sitemap XML').item.json.outputMode || 'download';
 const title = (html.match(/<title[^>]*>([\\s\\S]*?)<\\/title>/i)?.[1] || '').replace(/<[^>]+>/g, '').trim();
 const description = (html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)/i)?.[1] || '').trim();
 const visible = html.replace(/<script[\\s\\S]*?<\\/script>/gi, ' ').replace(/<style[\\s\\S]*?<\\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim().slice(0, 12000);
@@ -198,6 +276,13 @@ const returnDownload = node({
 });
 
 export default workflow('sitemap-to-markdown', 'Sitemap to Google-Friendly Markdown Drafts')
+  .add(urlForm)
+  .to(fetchSitemap)
+  .to(expandFormUrlSitemap)
+  .to(fetchPage)
+  .add(uploadForm)
+  .to(expandFormUploadedSitemap)
+  .to(fetchPage)
   .add(urlIntake)
   .to(fetchSitemap)
   .to(expandUrlSitemap)

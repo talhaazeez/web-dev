@@ -11,6 +11,22 @@ This directory contains an n8n workflow framework that accepts either a sitemap 
 
 ## Workflow behavior
 
+The workflow now exposes two browser-friendly Form Trigger pages in addition to the two POST webhook inputs. Open the form URLs from the n8n workflow’s trigger nodes, or use the webhook endpoints for programmatic calls.
+
+| Form | Purpose |
+| --- | --- |
+| `sitemap-to-markdown/form/url` | Enter a sitemap URL, maximum page count, and output mode. |
+| `sitemap-to-markdown/form/upload` | Upload an XML sitemap file, maximum page count, and output mode. |
+
+The forms provide these fields:
+
+| Field | Meaning |
+| --- | --- |
+| `sitemapUrl` | Public sitemap URL for URL mode. |
+| `sitemapFile` | XML sitemap upload for file mode. |
+| `maxPages` | Maximum pages to process, capped at 100. |
+| `outputMode` | `download` returns the Markdown file; `drive` uploads it to Google Drive. |
+
 The workflow exposes two POST webhook inputs:
 
 | Input | Path | Payload |
