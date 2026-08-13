@@ -11,7 +11,16 @@ This directory contains an n8n workflow framework that accepts either a sitemap 
 
 ## Workflow behavior
 
-The workflow now exposes two browser-friendly Form Trigger pages in addition to the two POST webhook inputs. Open the form URLs from the n8n workflow’s trigger nodes, or use the webhook endpoints for programmatic calls.
+The workflow now includes a single browser-friendly **front-door form** for normal use. Open the `Sitemap URL or XML File Form` node in n8n, copy its Test URL while testing or its Production URL after activation, and open that link in your browser. On the form, use either the URL field or the file-upload field, not both.
+
+| Input method | Where to enter it |
+| --- | --- |
+| Sitemap URL | Paste the complete public URL, such as `https://example.com/sitemap.xml`, into `Sitemap URL`. |
+| XML file | Select the local `sitemap.xml` file in `Upload sitemap.xml`. |
+| Output choice | Select `download` to return a Markdown file or `drive` to upload it to Google Drive. |
+
+The form automatically routes URL submissions and uploaded XML submissions to the correct branch. The older separate URL and upload forms remain available as alternatives, and the webhook endpoints remain available for programmatic calls.
+
 
 | Form | Purpose |
 | --- | --- |
