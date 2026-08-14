@@ -1,62 +1,141 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Ask Sibe | Natural-Language CAD Information Endpoint</title>
-  <meta name="description" content="Ask questions about Sibe cloud CAD management, SolidWorks workflows, the free trial, pricing, security, and contact options."/>
-  <link rel="canonical" href="https://sibe-cad.vercel.app/ask/"/>
-  <link rel="icon" href="/favicon.ico" sizes="32x32"/>
-  <link rel="icon" href="/icon.svg" type="image/svg+xml"/>
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"/>
-  <link rel="manifest" href="/site.webmanifest"/>
-  <link rel="alternate" type="text/markdown" href="/ask/index.md"/>
-  <link rel="alternate" type="application/ld+json" href="/ask/index.jsonld"/>
-  <link rel="nlweb" href="/ask/" title="Sibe natural-language information endpoint"/>
-  <link rel="mcp-server-card" href="/.well-known/mcp/server-card.json" title="Sibe MCP server card"/>
-  <link rel="agent-card" href="/.well-known/agent-card.json" title="Sibe A2A agent card"/>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Ask Sibe | Natural-Language CAD Information Endpoint</title>
+<meta content="Ask questions about Sibe cloud CAD management, SolidWorks workflows, the free trial, pricing, security, and contact options." name="description"/>
+<meta content="Sibe Editorial Team" name="author"/>
+<meta content="2026-08-15" name="date-published"/>
+<meta content="2026-08-15" name="date-modified"/>
+<meta content="All rights reserved. Contact Sibe for reuse permissions." name="content-license"/>
+<link href="https://sibe-cad.vercel.app/ask/" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link href="/ask/index.md" rel="alternate" type="text/markdown"/>
+<link href="/ask/index.jsonld" rel="alternate" type="application/ld+json"/>
+<link href="/ask/" rel="nlweb" title="Sibe natural-language information endpoint"/>
+<link href="/.well-known/mcp/server-card.json" rel="mcp-server-card" title="Sibe MCP server card"/>
+<link href="/.well-known/agent-card.json" rel="agent-card" title="Sibe A2A agent card"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sibe-cad.vercel.app/ask/#webpage",
+      "name": "Ask Sibe | Natural-Language CAD Information Endpoint",
+      "url": "https://sibe-cad.vercel.app/ask/",
+      "description": "A read-only natural-language information endpoint for public Sibe CAD resources.",
+      "inLanguage": "en",
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-15",
+      "isPartOf": {"@id": "https://sibe-cad.vercel.app/#website"},
+      "about": {"@id": "https://sibe-cad.vercel.app/#software"},
+      "author": {"@id": "https://sibe-cad.vercel.app/#editorial-team"},
+      "publisher": {"@id": "https://sibe-cad.vercel.app/#organization"},
+      "breadcrumb": {"@id": "https://sibe-cad.vercel.app/ask/#breadcrumb"},
+      "potentialAction": {"@type": "SearchAction", "target": "https://sibe-cad.vercel.app/ask/?q={question}", "query-input": "required name=question"}
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://sibe-cad.vercel.app/ask/#application",
+      "name": "Ask Sibe",
+      "url": "https://sibe-cad.vercel.app/ask/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "isAccessibleForFree": true,
+      "featureList": ["Read-only natural-language answers", "Declarative WebMCP askSibe form", "Guarded imperative WebMCP registration"],
+      "publisher": {"@id": "https://sibe-cad.vercel.app/#organization"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sibe-cad.vercel.app/ask/#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Sibe", "item": "https://sibe-cad.vercel.app/"},
+        {"@type": "ListItem", "position": 2, "name": "Ask Sibe", "item": "https://sibe-cad.vercel.app/ask/"}
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sibe-cad.vercel.app/#organization",
+      "name": "Sibe",
+      "url": "https://www.sibe.io/",
+      "logo": "https://sibe-cad.vercel.app/assets/sibe-logo.png",
+      "sameAs": ["https://www.linkedin.com/company/sibe-io"],
+      "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "url": "https://sibe-cad.vercel.app/contact/", "availableLanguage": "English"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sibe-cad.vercel.app/#editorial-team",
+      "name": "Sibe Editorial Team",
+      "url": "https://www.sibe.io/about",
+      "sameAs": ["https://www.linkedin.com/company/sibe-io"],
+      "worksFor": {"@id": "https://sibe-cad.vercel.app/#organization"}
+    }
+  ]
+}
+</script>
+<style id="ask-inline-schema">
     :root{color-scheme:light;--ink:#241a2b;--muted:#6d6575;--purple:#7114b8;--pink:#d33b91;--line:#e6d9eb;--wash:#fbf7fd}
-    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(135deg,#fff 0%,#fbf7fd 60%,#f3eafd 100%);line-height:1.6}a{color:var(--purple)}.skip-link{position:absolute;left:12px;top:-50px;padding:10px 14px;background:var(--ink);color:#fff;border-radius:8px}.skip-link:focus{top:12px}.topline{padding:10px 20px;background:#17121d;color:#fff;text-align:center;font-size:12px;font-weight:700}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;width:min(calc(100% - 36px),1120px);margin:0 auto;padding:18px 0}.brand{display:flex;align-items:center;gap:9px;color:var(--ink);font-size:19px;font-weight:900;text-decoration:none}.brand img{border-radius:9px}.navlinks{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;font-weight:800}.navlinks a{color:var(--muted);text-decoration:none}.navlinks a:hover,.navlinks a:focus-visible{color:var(--purple)}main{width:min(calc(100% - 36px),860px);margin:40px auto 80px}.eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:#f3eafd;color:var(--purple);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{max-width:780px;margin:18px 0 14px;font-size:clamp(40px,7vw,72px);line-height:.98;letter-spacing:-.055em}.hero p{max-width:720px;color:var(--muted);font-size:18px}.card{margin-top:30px;padding:30px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.86);box-shadow:0 18px 45px rgba(42,19,57,.08)}form{display:grid;gap:12px}label{font-weight:800}input{width:100%;padding:14px 16px;border:1px solid #d9c6e1;border-radius:12px;font:inherit;color:var(--ink);background:#fff}input:focus{outline:3px solid rgba(113,20,184,.18);border-color:var(--purple)}button{width:max-content;padding:13px 18px;border:0;border-radius:12px;background:linear-gradient(100deg,var(--purple),var(--pink));color:#fff;font:inherit;font-weight:900;cursor:pointer}button:hover,button:focus-visible{filter:brightness(1.06)}.answer{margin-top:22px;padding:18px;border-left:4px solid var(--purple);background:var(--wash);border-radius:0 12px 12px 0}.answer[hidden]{display:none}.answer strong{display:block;margin-bottom:5px}.note{color:var(--muted);font-size:13px}.resources{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}.resources ul{padding-left:20px}@media(max-width:700px){.nav{align-items:flex-start;flex-direction:column}.navlinks{gap:10px 14px}.hero h1{font-size:48px}.card{padding:22px}}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(135deg,#fff 0%,#fbf7fd 60%,#f3eafd 100%);line-height:1.6}a{color:var(--purple)}.skip-link{position:absolute;left:12px;top:-50px;padding:10px 14px;background:var(--ink);color:#fff;border-radius:8px}.skip-link:focus{top:12px}.topline{padding:10px 20px;background:#17121d;color:#fff;text-align:center;font-size:12px;font-weight:700}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;width:min(calc(100% - 36px),1120px);margin:0 auto;padding:18px 0}.brand{display:flex;align-items:center;gap:9px;color:var(--ink);font-size:19px;font-weight:900;text-decoration:none}.brand img{border-radius:9px}.navlinks{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;font-weight:800}.navlinks a{color:var(--muted);text-decoration:none}.navlinks a:hover,.navlinks a:focus-visible{color:var(--purple)}main{width:min(calc(100% - 36px),860px);margin:40px auto 80px}.eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:#f3eafd;color:var(--purple);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.hero h1{max-width:780px;margin:18px 0 14px;font-size:clamp(40px,7vw,72px);line-height:.98;letter-spacing:-.055em}.hero p{max-width:720px;color:var(--muted);font-size:18px}.card{margin-top:30px;padding:30px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.86);box-shadow:0 18px 45px rgba(42,19,57,.08)}form{display:grid;gap:12px}label{font-weight:800}input{width:100%;padding:14px 16px;border:1px solid #d9c6e1;border-radius:12px;font:inherit;color:var(--ink);background:#fff}input:focus{outline:3px solid rgba(113,20,184,.18);border-color:var(--purple)}button{width:max-content;padding:13px 18px;border:0;border-radius:12px;background:linear-gradient(100deg,var(--purple),var(--pink));color:#fff;font:inherit;font-weight:900;cursor:pointer}button:hover,button:focus-visible{filter:brightness(1.06)}.ask-footer{padding:28px 0;background:#0f0b13;color:#c4bac8;font-size:13px}.ask-footer-inner{width:min(calc(100% - 36px),1120px);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.ask-footer .footer-brand{color:#fff;font-size:19px;font-weight:900}.ask-footer-links{display:flex;gap:10px;flex-wrap:wrap}.ask-footer-links a{color:#fff;text-decoration:none}.ask-footer .copyright{color:#9e91a1;font-size:12px}.answer{margin-top:22px;padding:18px;border-left:4px solid var(--purple);background:var(--wash);border-radius:0 12px 12px 0}.answer[hidden]{display:none}.answer strong{display:block;margin-bottom:5px}.note{color:var(--muted);font-size:13px}.resources{margin-top:34px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}.resources ul{padding-left:20px}@media(max-width:700px){.nav{align-items:flex-start;flex-direction:column}.navlinks{gap:10px 14px}.hero h1{font-size:48px}.card{padding:22px}}
     @supports selector(form:tool-form-active){form:tool-form-active{outline:2px dashed var(--purple);outline-offset:5px}form:tool-submit-active button{outline:2px dashed var(--pink);outline-offset:4px}}
   </style>
-<link rel="agent-skills" href="/.well-known/agent-skills/index.json" title="Sibe Agent Skills index"/>
-<link rel="ucp" href="/.well-known/ucp" title="Sibe UCP capability profile"/>
-<script src="/webmcp-agent.js" defer></script>
+<link href="/.well-known/agent-skills/index.json" rel="agent-skills" title="Sibe Agent Skills index"/>
+<link href="/.well-known/ucp" rel="ucp" title="Sibe UCP capability profile"/>
+<script defer="" src="/webmcp-agent.js"></script>
 <style id="branding-alignment-fix">.brand{display:inline-flex;align-items:center;gap:9px;line-height:1;text-decoration:none}.brand-logo{display:block;width:34px;height:34px;flex:0 0 34px;object-fit:contain}.brand-wordmark{display:inline-flex;align-items:center;line-height:1;white-space:nowrap}.footer-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.footer-brand{display:inline-flex;align-items:center;gap:9px;min-height:28px;line-height:1;text-decoration:none}.footer-brand img{display:block;width:28px;height:28px;flex:0 0 28px;object-fit:contain}.footer-brand>span{display:inline-flex;align-items:center;line-height:1;white-space:nowrap}@media(max-width:700px){.footer-brand{min-height:30px}}</style>
+<style id="ask-geo-fix">.ask-meta{margin:18px 0 0;color:var(--muted);font-size:13px}.ask-meta strong{color:var(--ink)}.answer-context{margin-top:30px;padding:30px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.82)}.answer-context h2{margin-top:0}.answer-context p{color:var(--muted)}.answer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}.answer-grid article{padding:18px;border:1px solid var(--line);border-radius:14px;background:#fff}.answer-grid h3{margin:0 0 8px;font-size:18px}.answer-grid p{margin:0;font-size:14px}.answer-grid cite{display:block;margin-top:10px;color:var(--purple);font-size:12px;font-style:normal;font-weight:800}.answer-context ol{padding-left:22px;color:var(--muted)}.answer-context li{margin:8px 0}.answer-boundary{margin-top:22px;padding:16px;border-left:4px solid var(--pink);background:#fff6fa;border-radius:0 12px 12px 0;color:var(--muted)}@media(max-width:700px){.answer-grid{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <div class="topline">Sibe agent-ready information endpoint · Current site review: 15 August 2026</div>
-<header><nav class="nav" aria-label="Primary navigation"><a class="brand" href="/"><img src="/assets/sibe-logo.png" alt="Sibe logo" width="34" height="34"/><span>sibe<span style="color:var(--pink)">.</span></span></a><div class="navlinks"><a href="/">Home</a><a href="/cloud-cad-management/">Cloud CAD</a><a href="/features/cad-file-management/">CAD files</a><a href="/contact/">Contact</a></div></nav></header>
+<header><nav aria-label="Primary navigation" class="nav"><a class="brand" href="/"><img alt="Sibe logo" height="34" loading="lazy" src="/assets/sibe-logo.png" width="34"/><span>sibe<span style="color:var(--pink)">.</span></span></a><div class="navlinks"><a href="/">Home</a><a href="/cloud-cad-management/">Cloud CAD</a><a href="/features/cad-file-management/">CAD files</a><a href="/contact/">Contact</a></div></nav></header>
 <main id="main-content">
-  <section class="hero" aria-labelledby="ask-title">
-    <span class="eyebrow">Natural-language endpoint</span>
-    <h1 id="ask-title">Ask Sibe about cloud CAD management.</h1>
-    <p>This endpoint answers common informational questions using the published Sibe CAD pages. It does not create accounts, submit purchases, change subscriptions, or expose private workspace data.</p>
-  </section>
-  <section class="card" aria-labelledby="question-title">
-    <h2 id="question-title">Ask a question</h2>
-    <form toolname="askSibe" tooldescription="Answer a natural-language informational question using the published Sibe CAD website resources." toolautosubmit action="/ask/" method="get">
-      <label for="question">Question</label>
-      <input id="question" name="q" type="text" required autocomplete="off" toolparamdescription="A natural-language question about Sibe cloud CAD management, SolidWorks workflows, the free trial, pricing, security, or contact options." placeholder="For example: How long is the Sibe free trial?"/>
-      <button type="submit">Get an answer</button>
-    </form>
-    <div id="answer" class="answer" role="status" aria-live="polite" hidden></div>
-    <p class="note">For current plan limits, supported file formats, and commercial details, confirm the answer on the official Sibe pricing or demo page.</p>
-  </section>
-  <section class="resources" aria-labelledby="resources-title">
-    <h2 id="resources-title">Published resources</h2>
-    <ul>
-      <li><a href="/llms.txt">Machine-readable site overview</a></li>
-      <li><a href="/llms-full.txt">Full machine-readable site content</a></li>
-      <li><a href="/sitemap.xml">XML sitemap</a></li>
-      <li><a href="/contact/">Contact Sibe</a></li>
-      <li><a href="https://www.sibe.io/pricing">Official pricing</a></li>
-      <li><a href="https://www.sibe.io/demo">Official demo</a></li>
-    </ul>
-  </section>
+<section aria-labelledby="ask-title" class="hero">
+<span class="eyebrow">Natural-language endpoint</span>
+<h1 id="ask-title">Ask Sibe about cloud CAD management.</h1>
+<p>This endpoint answers common informational questions using the published Sibe CAD pages. It does not create accounts, submit purchases, change subscriptions, or expose private workspace data.</p>
+<p class="ask-meta"><strong>Published:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Reviewed and updated:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Editor:</strong> Sibe Editorial Team</p>
+</section>
+<section aria-labelledby="coverage-title" class="answer-context">
+<h2 id="coverage-title">What this endpoint covers</h2>
+<p><strong>Short answer:</strong> Ask Sibe is a read-only information interface for public Sibe CAD resources. According to the official product pages, the covered topics include cloud CAD management for SolidWorks, version control, CAD file management, revision approvals, BOM/product data, browser-based collaboration, trial guidance, pricing links, security links, and contact options.</p>
+<div class="answer-grid">
+<article><h3 id="product-workflow">Product workflow</h3><p>Sibe is described as a cloud workspace connecting SolidWorks work with versions, references, revisions, product data, approvals, and browser reviews.</p><cite><a href="/cloud-cad-management/">Cloud CAD management</a></cite></article>
+<article><h3 id="evaluation-signals">Evaluation signals</h3><p>The public pages describe a 14-day free trial, no credit card required, and a representative-assembly evaluation approach. Confirm current terms on the official pricing page.</p><cite><a href="https://www.sibe.io/pricing">Official pricing</a></cite></article>
+<article><h3 id="trust-and-sources">Trust and sources</h3><p>Answers point back to official Sibe product, demo, security, pricing, company, contact, and editorial-methodology resources for confirmation.</p><cite><a href="/editorial-methodology/">Editorial methodology</a></cite></article>
+</div>
+<h3 id="answer-process">How to use an answer</h3>
+<ol><li>Ask one focused question about a published Sibe CAD topic.</li><li>Use the linked source to confirm current plan, format, permission, security, or commercial details.</li><li>For a product decision, request a demo or test a representative SolidWorks assembly rather than relying on a generic answer.</li></ol>
+<p class="answer-boundary"><strong>Capability boundary:</strong> This page does not access private workspaces, create accounts, submit purchases, process payments, change subscriptions, or claim live transactional MCP, UCP, or A2A backend access.</p>
+</section>
+<section aria-labelledby="question-title" class="card">
+<h2 id="question-title">Ask a question</h2>
+<form action="/ask/" method="get" toolautosubmit="" tooldescription="Answer a natural-language informational question using the published Sibe CAD website resources." toolname="askSibe">
+<label for="question">Question</label>
+<input autocomplete="off" id="question" name="q" placeholder="For example: How long is the Sibe free trial?" required="" toolparamdescription="A natural-language question about Sibe cloud CAD management, SolidWorks workflows, the free trial, pricing, security, or contact options." type="text"/>
+<button type="submit">Get an answer</button>
+</form>
+<div aria-live="polite" class="answer" hidden="" id="answer" role="status"></div>
+<p class="note">For current plan limits, supported file formats, and commercial details, confirm the answer on the official Sibe pricing or demo page.</p>
+</section>
+<section aria-labelledby="resources-title" class="resources">
+<h2 id="resources-title">Published resources</h2>
+<ul>
+<li><a href="/llms.txt">Machine-readable site overview</a></li>
+<li><a href="/llms-full.txt">Full machine-readable site content</a></li>
+<li><a href="/sitemap.xml">XML sitemap</a></li>
+<li><a href="/contact/">Contact Sibe</a></li>
+<li><a href="https://www.sibe.io/pricing">Official pricing</a></li>
+<li><a href="https://www.sibe.io/demo">Official demo</a></li>
+</ul>
+</section>
 </main>
+<footer class="ask-footer"><div class="ask-footer-inner"><a aria-label="Sibe home" class="footer-brand" href="/"><img alt="Sibe logo" height="28" loading="lazy" src="/assets/sibe-logo.png" width="28"/><span>sibe<span style="color:var(--pink)">.</span></span></a><nav aria-label="Footer navigation" class="ask-footer-links"><a href="/">Home</a><a href="/contact/">Contact</a><a href="/editorial-methodology/">Editorial methodology</a><a href="https://app.sibe.io/privacy-policy">Privacy</a><a href="https://app.sibe.io/terms-of-service">Terms</a></nav><span class="copyright">© 2026 Sibe, Inc. · All rights reserved.</span></div></footer>
 <script>
 (function(){
   const answerBox=document.getElementById('answer');
@@ -78,7 +157,7 @@
   function showAnswer(question){ if(!question)return; answerBox.hidden=false; answerBox.innerHTML='<strong>Answer</strong><span></span>'; answerBox.querySelector('span').textContent=getAnswer(question); }
   const params=new URLSearchParams(location.search); if(params.get('q')){questionInput.value=params.get('q');showAnswer(params.get('q'));}
   document.querySelector('form').addEventListener('submit',function(event){ if(event.agentInvoked){event.preventDefault();const result=getAnswer(questionInput.value);showAnswer(questionInput.value);if(event.respondWith)event.respondWith(Promise.resolve(result));} });
-  if(document.modelContext&&document.modelContext.registerTool){ document.modelContext.registerTool({name:'askSibe',description:'Answer an informational question using the published Sibe CAD website resources.',inputSchema:{type:'object',properties:{question:{type:'string',description:'A question about Sibe cloud CAD management, SolidWorks workflows, the free trial, pricing, security, or contact options.'}},required:['question']},execute:async function(args){showAnswer(args.question);return getAnswer(args.question);}}).catch(function(){}); }
+  if(document.modelContext){ var askTool={name:'askSibe',description:'Answer an informational question using the published Sibe CAD website resources.',inputSchema:{type:'object',properties:{question:{type:'string',description:'A question about Sibe cloud CAD management, SolidWorks workflows, the free trial, pricing, security, or contact options.'}},required:['question']},execute:async function(args){showAnswer(args.question);return getAnswer(args.question);}}; if(typeof document.modelContext.registerTool==='function'){ document.modelContext.registerTool(askTool).catch(function(){}); } if(typeof document.modelContext.provideContext==='function'){ try{ document.modelContext.provideContext(askTool); }catch(e){} } }
 })();
 </script>
 </body>
