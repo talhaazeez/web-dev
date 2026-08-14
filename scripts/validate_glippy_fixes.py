@@ -58,11 +58,13 @@ print('manifest-ok')
 robots = (ROOT / 'robots.txt').read_text()
 assert 'Content-Signal: search=yes, ai-input=yes, ai-train=no' in robots
 assert 'Sitemap: https://sibe-cad.vercel.app/sitemap.xml' in robots
+assert 'LLMS-TXT: https://sibe-cad.vercel.app/llms.txt' in robots
+assert 'LLMS-FULL-TXT: https://sibe-cad.vercel.app/llms-full.txt' in robots
 print('robots-ok')
 
 sitemap = (ROOT / 'sitemap.xml').read_text()
-assert sitemap.count('<loc>') == 11
-assert sitemap.count('<lastmod>2026-08-15</lastmod>') == 11
+assert sitemap.count('<loc>') == 14
+assert sitemap.count('<lastmod>2026-08-15</lastmod>') == 14
 print('sitemap-ok')
 
 key_files = [p for p in ROOT.glob('*.txt') if re.fullmatch(r'[A-Fa-f0-9]{64}\.txt', p.name)]

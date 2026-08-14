@@ -15,6 +15,10 @@ Agent-Skills: https://sibe-cad.vercel.app/.well-known/agent-skills/index.json
 
 # IndexNow ownership key location: https://sibe-cad.vercel.app/834b662808ed78415e21e6edd3940f70482296a32e85195392a2573e3a8acf1f.txt
 
+# Compatibility summaries; the canonical knowledge surface remains the OKF bundle.
+LLMS-TXT: https://sibe-cad.vercel.app/llms.txt
+LLMS-FULL-TXT: https://sibe-cad.vercel.app/llms-full.txt
+
 # Open Knowledge Format bundle
 OKF-Bundle: https://sibe-cad.vercel.app/okf/index.md
 OKF-Repository: https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf

@@ -1,0 +1,31 @@
+# Sibe
+
+> Cloud CAD management for SolidWorks teams, with version control, CAD file management, revision approvals, BOM context, and browser-based collaboration.
+
+Sibe is presented publicly as a cloud workspace for engineering teams working with SolidWorks data. The site explains product workflows, evaluation steps, trust resources, and public contact routes.
+
+## Main pages
+
+- [Homepage](https://sibe-cad.vercel.app/): Product overview, free-trial context, workflow summary, and evaluation guidance.
+- [Cloud CAD management](https://sibe-cad.vercel.app/cloud-cad-management/): Version control, references, revisions, BOM context, and browser collaboration.
+- [CAD file management](https://sibe-cad.vercel.app/features/cad-file-management/): SolidWorks files, references, metadata, versions, check-in/check-out, and review.
+- [Revision approval workflow](https://sibe-cad.vercel.app/features/solidworks-revision-approval-workflow/): In Progress, Pending Approval, Released, review context, and release decisions.
+- [BOM management](https://sibe-cad.vercel.app/features/solidworks-bom-management/): Assembly-aware BOM and product data workflow.
+- [Remote collaboration](https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/): Controlled browser views and distributed engineering review.
+- [PDM migration](https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/): Phased evaluation using a representative project before a broader migration decision.
+- [Contact Sibe](https://sibe-cad.vercel.app/contact/): Official demo and contact routes.
+- [Editorial methodology](https://sibe-cad.vercel.app/editorial-methodology/): Source, review, freshness, and verification practices.
+- [Ask Sibe](https://sibe-cad.vercel.app/ask/): Public informational question endpoint.
+
+## Canonical machine-readable resources
+
+- [OKF bundle](https://sibe-cad.vercel.app/okf/index.md): Canonical Markdown knowledge bundle.
+- [OKF page map](https://sibe-cad.vercel.app/okf/page-map.md): Mapping from every public webpage to its colocated Markdown page and dedicated OKF concept.
+- [OKF concepts](https://sibe-cad.vercel.app/okf/concepts/index.md): Page-specific product, workflow, trust, and information concepts.
+- [Full compatibility summary](https://sibe-cad.vercel.app/llms-full.txt): Expanded plain-text summary of the public site.
+- [Sitemap](https://sibe-cad.vercel.app/sitemap.xml): Public URL inventory.
+- [Robots and discovery declarations](https://sibe-cad.vercel.app/robots.txt): Crawl and machine-readable resource references.
+
+## Maintenance note
+
+This file is provided as a compatibility directory. The canonical page-specific Markdown knowledge surface is the Sibe OKF bundle above. Verify current plan terms, supported capabilities, and availability on the official Sibe product routes before making decisions.

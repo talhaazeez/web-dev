@@ -1,0 +1,69 @@
+# Sibe — expanded public site summary
+
+## Purpose
+
+Sibe’s public website explains a cloud CAD management workflow for SolidWorks teams. The material covers version control, CAD file management, revision approvals, BOM and product data, browser-based collaboration, PDM migration evaluation, trial guidance, contact routes, and editorial verification.
+
+The canonical machine-readable knowledge surface is the [Sibe Open Knowledge Format bundle](https://sibe-cad.vercel.app/okf/index.md). This compatibility summary provides a plain-text directory for systems that look for a root-level `llms-full.txt` file; it should be read together with the page-specific OKF concepts and linked official Sibe sources.
+
+## Homepage
+
+The [Sibe homepage](https://sibe-cad.vercel.app/) introduces a 14-day free-trial evaluation for cloud CAD and PDM workflows. It describes a shared workspace for SolidWorks version control, CAD file management, revision approvals, BOM and product data, and browser-based design collaboration. The practical evaluation advice is to start with one representative assembly and test the workflow on real project data.
+
+## Cloud CAD management
+
+The [Cloud CAD Management page](https://sibe-cad.vercel.app/cloud-cad-management/) explains how teams can connect SolidWorks work to a shared online workspace. The page covers version control, reference-aware product context, remote access, browser-based review, revision states, and assembly-aware product data. It compares shared-drive habits with a controlled cloud workflow and recommends validating the process with a representative assembly before wider standardization.
+
+## CAD file management
+
+The [CAD File Management page](https://sibe-cad.vercel.app/features/cad-file-management/) focuses on keeping parts, drawings, subassemblies, references, metadata, and versions connected. It discusses reference-aware structure, version history, search and metadata, check-in/check-out, browser review, and a practical first test using an assembly that causes real workflow friction.
+
+## Revision approval workflow
+
+The [Revision Approval Workflow page](https://sibe-cad.vercel.app/features/solidworks-revision-approval-workflow/) describes a visible path from In Progress to Pending Approval to Released. The page emphasizes keeping review comments, markups, release notes, and decision context tied to the exact design version rather than relying on filename conventions or scattered email threads.
+
+## BOM and product data
+
+The [SolidWorks BOM Management page](https://sibe-cad.vercel.app/features/solidworks-bom-management/) describes using assembly structure and SolidWorks metadata as a starting point for BOM and product data workflows. It covers indented structures, nested subassemblies, custom properties, quantity and revision context, manufacturing-oriented exports, and keeping engineering, purchasing, and manufacturing conversations connected to the design definition.
+
+## Remote collaboration
+
+The [Remote Team Collaboration page](https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/) explains a distributed workflow in which engineers continue working in SolidWorks while project managers, customers, suppliers, quality teams, and other reviewers use controlled browser-based views. The page discusses access control, comments, markups, review history, and keeping everyone aligned on the same design version.
+
+## PDM migration
+
+The [SolidWorks PDM Migration page](https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/) presents a phased evaluation approach. It recommends choosing a representative project, connecting the existing workflow, and validating references, permissions, version control, approvals, browser reviews, and downstream usability before planning a broad migration. It does not promise that every legacy configuration or file type migrates automatically.
+
+## Contact and official routes
+
+The [Contact page](https://sibe-cad.vercel.app/contact/) directs product questions, walkthrough requests, and trial guidance to the official Sibe demo route. It also records the public Sibe, Inc. mailing address. Current commercial details should be checked on the official [Sibe pricing page](https://www.sibe.io/pricing), and current product questions can be taken to the [official Sibe demo page](https://www.sibe.io/demo).
+
+## Editorial methodology
+
+The [Editorial Methodology page](https://sibe-cad.vercel.app/editorial-methodology/) explains that the public product pages are original summaries checked against official Sibe product, About, security, demo, pricing, and feature pages. It describes publication and review dates, source links, accessibility checks, structured-data checks, and post-deployment route checks. Readers should verify plan-specific capabilities and current availability on the linked official routes.
+
+## Ask Sibe
+
+The [Ask Sibe endpoint](https://sibe-cad.vercel.app/ask/) is a public, read-only informational route for questions about the topics covered by the site. It does not access private workspaces, create accounts, process payments, change subscriptions, or perform destructive actions. The endpoint provides links to the relevant public Sibe page and source context.
+
+## Page-specific Markdown and OKF concepts
+
+Every public webpage has a colocated Markdown representation and a dedicated concept in the [OKF concepts index](https://sibe-cad.vercel.app/okf/concepts/index.md). The [OKF page map](https://sibe-cad.vercel.app/okf/page-map.md) explicitly maps each webpage to its colocated Markdown file and its page-specific OKF concept. The bundle also includes a [references index](https://sibe-cad.vercel.app/okf/references/index.md) and a [bundle log](https://sibe-cad.vercel.app/okf/log.md).
+
+## Verification and freshness
+
+The website publishes canonical URLs, breadcrumbs, JSON-LD, source links, RSS, sitemap, license information, agent-discovery resources, and WebMCP declarative forms. These signals describe public routes only. Verify current pricing, plan limits, file support, security details, and availability on the official Sibe sources before relying on a time-sensitive product detail.
+
+## Key resources
+
+- [OKF bundle index](https://sibe-cad.vercel.app/okf/index.md)
+- [OKF page map](https://sibe-cad.vercel.app/okf/page-map.md)
+- [OKF concepts index](https://sibe-cad.vercel.app/okf/concepts/index.md)
+- [Sibe XML sitemap](https://sibe-cad.vercel.app/sitemap.xml)
+- [Robots and discovery declarations](https://sibe-cad.vercel.app/robots.txt)
+- [Public information endpoint](https://sibe-cad.vercel.app/ask/)
+- [Contact Sibe](https://sibe-cad.vercel.app/contact/)
+
+## Maintenance note
+
+This file is maintained as a compatibility summary. The canonical page-specific Markdown knowledge representation is the Sibe OKF bundle. When this file and an official Sibe product route differ, use the official route for current product, plan, pricing, security, and availability details.
