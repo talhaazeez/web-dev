@@ -83,6 +83,6 @@ The workflow uses the existing webpage as its primary evidence source. It does n
 
 - [Google Search Essentials](https://developers.google.com/search/docs/essentials)
 - [Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
-- [Google Search guidance on generative AI content](https://developers.google.com/search/docs/fundamentals/using-gen-ai-content)
+- [Google Search guidance on people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
 - [Influencing title links in Google Search](https://developers.google.com/search/docs/appearance/title-link)
 - [Introduction to structured data markup](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data)

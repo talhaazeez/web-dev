@@ -21,11 +21,11 @@ sources:
 ---
 # Sibe editorial methodology
 
-Sibe product education pages are written as original explanations and checked against official Sibe product, About, security, demo, pricing, and feature pages. Pages carry publication and review dates, source links, accessibility landmarks, structured data, and post-deployment route checks.
+Sibe product education pages are written as original explanations and checked against official Sibe product, About, security, demo, pricing, and feature pages. The editorial team makes a final pass for clarity, context, and natural phrasing so the guidance is useful to people who work with CAD data. Pages carry publication and review dates, source links, accessibility landmarks, structured data, and post-deployment route checks.
 
 ## External OKF reference
 
-Google Cloud describes the [Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) as a vendor-neutral, Markdown-based format for portable knowledge that people and AI systems can read. This Sibe bundle follows the repository’s plain-Markdown and YAML-frontmatter approach; it is published as a Sibe knowledge bundle and does not claim certification by Google.
+Google Cloud describes the [Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) as a vendor-neutral, Markdown-based format for portable knowledge that people and software tools can read. This Sibe bundle follows the repository’s plain-Markdown and YAML-frontmatter approach; it is published as a Sibe knowledge bundle and does not claim certification by Google.
 
 ## Related concepts
 

@@ -24,7 +24,7 @@ The attached CSV contains 66 findings for the cloud CAD management page. The CSV
 |---|---|
 | Article/BlogPosting schema | The audited URL is a product landing page, not an article. Adding Article schema would misrepresent the page type. Product pages use WebPage and SoftwareApplication schema instead. |
 | No hreflang | No alternate language pages exist, so hreflang would be incorrect. |
-| AI-specific meta tags, RSL/license.xml | These are emerging conventions; no licensing policy or AI usage policy was supplied. Do not publish unsupported legal or licensing claims. |
+| Emerging crawler metadata, RSL/license.xml | These are emerging conventions; no licensing policy or rights statement was supplied. Do not publish unsupported legal or licensing claims. |
 | RSS/Atom feed | The current site has no recurring article feed. A feed containing only static product pages would be misleading. |
 | WebMCP/UCP/MCP/A2A/NLWeb/schemamap/Web Bot Auth | The site exposes no transactional agent tools, MCP server, commerce protocol, dynamic query endpoint, or signed-agent API. Placeholder discovery files would be unsupported. |
 | Video/audio/charts | The audited page is a static product explainer. These are optional multimodal enhancements, not defects. |

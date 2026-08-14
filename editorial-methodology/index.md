@@ -1,6 +1,6 @@
 # How Sibe product education is researched and reviewed.
 
-We use official Sibe product, security, company, demo, pricing, and feature pages as primary references for product descriptions and workflow explanations. We write original summaries for search and answer engines rather than copying source pages.
+We use official Sibe product, security, company, demo, pricing, and feature pages as primary references for product descriptions and workflow explanations. We write original summaries for practical engineering questions rather than copying source pages. Our editorial team makes a final pass for clarity, context, and natural phrasing so the guidance is useful to people who work with CAD data.
 
 Published: 15 August 2026 · Reviewed and updated: 15 August 2026 · Editor: Sibe Editorial Team
 
@@ -38,4 +38,4 @@ Source: https://www.sibe.io/ and the official Sibe pages linked from this docume
 
 ## External format reference
 
-Google Cloud describes the [Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) as a vendor-neutral, markdown-based format for portable knowledge that can be read by people and AI systems. Sibe publishes Markdown, JSON-LD, and discovery resources as practical machine-readable surfaces; this site does not claim formal OKF v0.1 conformance.
+Google Cloud describes the [Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) as a vendor-neutral, markdown-based format for portable knowledge that can be read by people and software tools. Sibe publishes Markdown, JSON-LD, and discovery resources as practical reference surfaces; this site does not claim formal OKF v0.1 conformance.
