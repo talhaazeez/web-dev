@@ -35,7 +35,3 @@ This page is an original summary of Sibe’s public product and company informat
 Official product overview · About and team · Demo and expert review · Security · Pricing
 
 Source: https://www.sibe.io/ and the official Sibe pages linked from this document.
-
-## External format reference
-
-Google Cloud describes the [Open Knowledge Format](https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing) as a vendor-neutral, markdown-based format for portable knowledge that can be read by people and software tools. Sibe publishes Markdown, JSON-LD, and discovery resources as practical reference surfaces; this site does not claim formal OKF v0.1 conformance.
