@@ -29,6 +29,9 @@
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+      },
+      "breadcrumb": {
+        "@id": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/#breadcrumb"
       }
     },
     {
@@ -65,24 +68,6 @@
         "availability": "https://schema.org/InStock"
       },
       "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://sibe-cad.vercel.app/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Remote Team Collaboration",
-          "item": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/"
-        }
-      ]
     },
     {
       "@type": "FAQPage",
@@ -125,6 +110,30 @@
       "worksFor": {
         "@id": "https://sibe-cad.vercel.app/#organization"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sibe-cad.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cloud CAD Management",
+          "item": "https://sibe-cad.vercel.app/cloud-cad-management/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Remote Team Collaboration",
+          "item": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/"
+        }
+      ]
     }
   ]
 }

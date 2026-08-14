@@ -16,8 +16,7 @@
 
 .skip-link{position:absolute;left:12px;top:-48px;z-index:1000;background:#17121d;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:800}.skip-link:focus{top:12px}.breadcrumb{width:min(calc(100% - 36px),1120px);margin:0 auto;padding:18px 0 0;color:#6d6575;font-size:13px}.breadcrumb a{color:#7114b8;text-decoration:underline}.meta-line{width:min(calc(100% - 36px),1120px);margin:8px auto 0;color:#6d6575;font-size:13px}.contents{width:min(calc(100% - 36px),1120px);margin:24px auto 0;padding:22px;border:1px solid #e9e1ee;border-radius:16px;background:#fff}.contents h2{font-size:20px;margin:0 0 8px}.contents ul{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0;padding-left:18px}.contents a{color:#7114b8}.definition-list{display:grid;grid-template-columns:180px 1fr;gap:12px 20px;margin:0}.definition-list dt{font-weight:800;color:#7114b8}.definition-list dd{margin:0;color:#6d6575}.comparison{width:100%;border-collapse:collapse;margin-top:20px;background:#fff}.comparison th,.comparison td{border:1px solid #e9e1ee;text-align:left;padding:12px;vertical-align:top}.comparison th{background:#f3eafd}.step-list{counter-reset:step;display:grid;gap:12px;padding:0;list-style:none}.step-list li{counter-increment:step;background:#fff;border:1px solid #e9e1ee;border-radius:12px;padding:16px 18px 16px 52px;position:relative}.step-list li:before{content:counter(step);position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:8px;background:#17121d;color:#fff;text-align:center;font-weight:800}@media(max-width:700px){.definition-list{grid-template-columns:1fr}.comparison{font-size:13px;display:block;overflow-x:auto}.contents ul{display:block}.contents li{margin:6px 0}}
 
-  .site-trust{padding:13px 0;background:#f3eafd;color:#5c4f68;font-size:13px}.site-trust a,.site-sources a{color:#7114b8;font-weight:700}.site-sources{padding:46px 0;background:#fbf9fc;border-top:1px solid #e9e1ee}.site-sources h2{margin-top:0}.site-sources p{color:#6d6575;max-width:820px}.copyright{color:#9e91a1;font-size:12px}</style><script type="application/ld+json">
-{
+  .site-trust{padding:13px 0;background:#f3eafd;color:#5c4f68;font-size:13px}.site-trust a,.site-sources a{color:#7114b8;font-weight:700}.site-sources{padding:46px 0;background:#fbf9fc;border-top:1px solid #e9e1ee}.site-sources h2{margin-top:0}.site-sources p{color:#6d6575;max-width:820px}.copyright{color:#9e91a1;font-size:12px}</style><script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -48,6 +47,9 @@
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+      },
+      "breadcrumb": {
+        "@id": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/#breadcrumb"
       }
     },
     {
@@ -84,24 +86,6 @@
         "availability": "https://schema.org/InStock"
       },
       "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://sibe-cad.vercel.app/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Remote Team Collaboration",
-          "item": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/"
-        }
-      ]
     },
     {
       "@type": "FAQPage",
@@ -144,10 +128,33 @@
       "worksFor": {
         "@id": "https://sibe-cad.vercel.app/#organization"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sibe-cad.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cloud CAD Management",
+          "item": "https://sibe-cad.vercel.app/cloud-cad-management/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Remote Team Collaboration",
+          "item": "https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/"
+        }
+      ]
     }
   ]
-}
-</script> <link href="/features/remote-team-collaboration-for-solidworks-teams/index.md" rel="alternate" type="text/markdown"/>
+}</script> <link href="/features/remote-team-collaboration-for-solidworks-teams/index.md" rel="alternate" type="text/markdown"/>
 <link href="/feed.xml" rel="alternate" title="Sibe updates" type="application/rss+xml"/>
 <meta content="All rights reserved. Contact Sibe for reuse permissions." name="content-license"/>
 <link href="/schemamap.xml" rel="alternate" title="Sibe schema map" type="application/xml"/><link href="/features/remote-team-collaboration-for-solidworks-teams/index.jsonld" rel="alternate" type="application/ld+json"/><link href="/license.xml" rel="license" type="application/xml"/><link href="/ask/" rel="nlweb" title="Sibe natural-language information endpoint"/>
@@ -161,7 +168,7 @@
 </style>
 <style id="branding-alignment-fix">.brand{display:inline-flex;align-items:center;gap:9px;line-height:1;text-decoration:none}.brand-logo{display:block;width:34px;height:34px;flex:0 0 34px;object-fit:contain}.brand-wordmark{display:inline-flex;align-items:center;line-height:1;white-space:nowrap}.footer-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.footer-brand{display:inline-flex;align-items:center;gap:9px;min-height:28px;line-height:1;text-decoration:none}.footer-brand img{display:block;width:28px;height:28px;flex:0 0 28px;object-fit:contain}.footer-brand>span{display:inline-flex;align-items:center;line-height:1;white-space:nowrap}@media(max-width:700px){.footer-brand{min-height:30px}}</style>
 <style id="skip-link-visibility-fix">.skip-link{position:fixed!important;left:12px!important;top:12px!important;z-index:10000!important;display:inline-flex!important;align-items:center!important;visibility:visible!important;opacity:1!important;background:#17121d!important;color:#fff!important;padding:10px 14px!important;border:2px solid #fff!important;border-radius:8px!important;text-decoration:none!important;font-weight:800!important;line-height:1.2!important;box-shadow:0 6px 18px rgba(23,18,29,.24)!important}.skip-link:hover,.skip-link:focus-visible{background:#7114b8!important;color:#fff!important;outline:3px solid #df3f83!important;outline-offset:3px}@media(max-width:700px){.skip-link{top:78px!important;left:12px!important}}</style>
-<link rel="alternate" type="text/markdown" href="/okf/index.md" title="Sibe Open Knowledge Format bundle"/>
+<link href="/okf/index.md" rel="alternate" title="Sibe Open Knowledge Format bundle" type="text/markdown"/>
 </head><body>
 <a class="skip-link" href="#main-content">Skip to main content</a><header><div class="container"><nav><a aria-label="Sibe home" class="brand" href="/">
 <img alt="Sibe logo" class="brand-logo" height="34" src="/assets/sibe-logo.png" width="34"/>
@@ -175,7 +182,7 @@
 <a href="https://www.sibe.io/pricing">Pricing</a>
 <a class="navcta" href="https://app.sibe.io/">Start free trial</a>
 </div><a href="/ask/">Ask Sibe</a></nav></div></header><main id="main-content"><section class="hero"><div class="container"><span class="eyebrow">Remote engineering collaboration</span><h1 id="keep-distributed-solidworks-teams-aligned-around-the-same-design">Keep distributed SolidWorks teams aligned around the same design.</h1><p>Sibe connects engineers, project managers, customers, suppliers, and reviewers with cloud version control and browser-based collaboration for 2D and 3D design data.</p><div class="actions"><a class="btn" href="https://app.sibe.io/">Start the 14-day free trial</a><a class="btn alt" href="/features/solidworks-revision-approval-workflow/">See revision approvals</a></div></div></section>
-<nav aria-label="Breadcrumb" class="breadcrumb"><a href="https://sibe-cad.vercel.app/">Home</a> <span aria-hidden="true">›</span> <span>Remote Team Collaboration</span></nav><p class="meta-line"><strong>Published:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Reviewed and updated:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Editor:</strong> Sibe Editorial Team</p>
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> <a href="https://sibe-cad.vercel.app/cloud-cad-management/">Cloud CAD Management</a> <span aria-hidden="true">›</span> <span>Remote Team Collaboration</span></nav><p class="meta-line"><strong>Published:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Reviewed and updated:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Editor:</strong> Sibe Editorial Team</p>
 <nav aria-labelledby="contents-title" class="contents"><h2 id="contents-title">On this page</h2><ul><li><a href="#give-every-stakeholder-the-right-view-of-the-product-definition">Give every stakeholder the right view of the product definition.</a></li><li><a href="#collaborate-across-locations-without-adding-a-vpn-project">Collaborate across locations without adding a VPN project.</a></li><li><a href="#remote-design-collaboration-questions">Remote design collaboration questions</a></li></ul></nav><section><div class="container"><div class="head"><span class="kicker">Collaboration without the email chain</span><h2 id="give-every-stakeholder-the-right-view-of-the-product-definition">Give every stakeholder the right view of the product definition.</h2><p>Remote teams should not have to email STEP files, create screenshots, or guess which assembly a review refers to. Share the version you want reviewed and keep feedback connected to the work.</p></div><div class="grid"><article class="card"><h3 id="engineers-work-in-solidworks">Engineers work in SolidWorks</h3><p>Use the native add-in for check-in, check-out, version history, and revision control while keeping the design workflow familiar.</p></article><article class="card"><h3 id="reviewers-use-a-browser">Reviewers use a browser</h3><p>Project managers, customers, suppliers, and quality teams can inspect selected 2D and 3D designs without a SolidWorks license.</p></article><article class="card"><h3 id="access-stays-controlled">Access stays controlled</h3><p>Share projects or specific versions with role-based permissions and reduce the risk of exposing more intellectual property than a partner needs.</p></article><article class="card"><h3 id="decisions-stay-findable">Decisions stay findable</h3><p>Keep comments, markups, review status, and release history tied to the design version so teams can see what was discussed and approved.</p></article></div></div></section><section class="band"><div class="container"><div class="head"><span class="kicker">For modern engineering teams</span><h2 id="collaborate-across-locations-without-adding-a-vpn-project">Collaborate across locations without adding a VPN project.</h2><p>Cloud-based access helps distributed teams review and release designs from the places where work actually happens, while the SolidWorks workflow remains connected to the controlled product data.</p></div><div class="actions"><a class="btn" href="/features/solidworks-bom-management/">Share product data and BOMs</a><a class="btn alt" href="https://www.sibe.io/demo">Book a product demo</a></div></div></section><section class="faq"><div class="container"><div class="head"><span class="kicker">FAQ</span><h2 id="remote-design-collaboration-questions">Remote design collaboration questions</h2></div><details open=""><summary>Can customers review a 3D design without SolidWorks?</summary><p>A secure browser-based review can let external stakeholders inspect the selected design without installing SolidWorks, subject to the workspace permissions.</p></details><details><summary>Can suppliers see only selected files?</summary><p>Teams can share specific projects, files, or versions and use access controls so external partners see the information needed for their review.</p></details><details><summary>How does collaboration stay tied to the right version?</summary><p>Version control and browser reviews work together so feedback and decisions can be associated with the design version being reviewed.</p></details></div></section><section class="bulk-summary" id="remote-collaboration-answer-summary"><div class="container"><span class="bulk-kicker">Answer-ready summary</span><h2 id="remote-collaboration-answer-summary-title">What remote SolidWorks collaboration should preserve</h2><p class="bulk-lead"><strong>Short answer:</strong> Remote collaboration works when the team shares the same controlled design context, not when engineers repeatedly export screenshots and STEP files. Sibe connects SolidWorks version control with browser-based views for the people who need to review or act on the product definition.</p><div class="bulk-grid"><article class="bulk-card"><span class="bulk-label">Problem</span><h3 id="review-by-attachment">Review by attachment</h3><p>Email chains and screenshots can separate feedback from the design version that prompted it.</p></article><article class="bulk-card"><span class="bulk-label">Solution</span><h3 id="role-appropriate-access">Role-appropriate access</h3><p>Engineers continue in SolidWorks while project managers, customers, suppliers, quality teams, and reviewers use selected browser views.</p></article><article class="bulk-card"><span class="bulk-label">Proof point</span><h3 id="no-vpn-project">No VPN project</h3><p>The product is positioned around cloud access for distributed work without requiring a customer-managed PDM server and separate VPN project.</p><cite><a href="/features/remote-team-collaboration-for-solidworks-teams/">Remote collaboration page</a></cite></article></div><dl class="bulk-details"><dt>Engineering</dt><dd>Keep version history, references, revisions, and check-in/check-out connected to the native workflow.</dd><dt>Reviewers</dt><dd>Inspect a selected 2D or 3D design without needing a SolidWorks license, subject to permissions.</dd><dt>Decisions</dt><dd>Keep comments, markups, status, and release history associated with the design version under review.</dd></dl><ol class="bulk-steps"><li><strong>Step 1.</strong> Choose a real project with a distributed reviewer or supplier dependency.</li><li><strong>Step 2.</strong> Share the selected version with only the role or partner that needs it.</li><li><strong>Step 3.</strong> Compare browser review, feedback capture, and release traceability with the current email workflow.</li></ol><div class="bulk-comparison"><h3 id="features-workflow-comparison">Workflow comparison</h3><table class="comparison"><caption>Current workflow friction compared with the Sibe workflow described on this page.</caption><thead><tr><th scope="col">Workflow need</th><th scope="col">Common manual approach</th><th scope="col">Sibe workflow to evaluate</th></tr></thead><tbody><tr><th scope="row">Review</th><td>Attachments and screenshots</td><td>Selected browser design view</td></tr><tr><th scope="row">Access</th><td>Broad file sharing or manual exports</td><td>Role-appropriate controlled access</td></tr><tr><th scope="row">Decision</th><td>Feedback detached from version</td><td>Comments and review history tied to the design</td></tr></tbody></table></div><p class="bulk-note">Access controls and external-sharing behavior should be confirmed for the current Sibe workspace and plan. Read the <a href="/ask/">Ask Sibe endpoint</a> for an informational answer or use the official source linked above for current details.</p></div></section>
 <section class="site-sources" id="site-sources"><div class="container"><h2 id="site-sources-title">Sources and verification</h2><p>This page is an original summary of Sibe’s public product and company information. Product descriptions are checked against official Sibe pages for the homepage, About, demo, security, pricing, and relevant feature documentation.</p><p class="source-freshness">Reviewed 15 August 2026. Verify plan-specific details and current availability on the official Sibe pages linked below.</p><p><cite><a href="https://www.sibe.io/">Official product overview</a></cite> · <cite><a href="https://www.sibe.io/about">About and team</a></cite> · <cite><a href="https://www.sibe.io/demo">Demo and expert review</a></cite> · <cite><a href="https://www.sibe.io/data-security">Security</a></cite> · <cite><a href="https://www.sibe.io/pricing">Pricing</a></cite></p></div></section>
 </main><div class="site-trust"><div class="container"><strong>Trust and review resources:</strong> <a href="/contact/">Contact Sibe</a> · <a href="/editorial-methodology/">Editorial methodology</a> · <a href="https://app.sibe.io/privacy-policy">Privacy</a> · <a href="https://app.sibe.io/terms-of-service">Terms</a> · <a href="https://www.sibe.io/data-security">Security</a></div></div>

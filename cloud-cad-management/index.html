@@ -30,8 +30,7 @@
 .skip-link{position:absolute;left:12px;top:-48px;z-index:1000;background:#17121d;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:800}.skip-link:focus{top:12px}.breadcrumb{width:min(calc(100% - 36px),1120px);margin:0 auto;padding:18px 0 0;color:#6d6575;font-size:13px}.breadcrumb a{color:#7114b8;text-decoration:underline}.meta-line{width:min(calc(100% - 36px),1120px);margin:8px auto 0;color:#6d6575;font-size:13px}.contents{width:min(calc(100% - 36px),1120px);margin:24px auto 0;padding:22px;border:1px solid #e9e1ee;border-radius:16px;background:#fff}.contents h2{font-size:20px;margin:0 0 8px}.contents ul{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0;padding-left:18px}.contents a{color:#7114b8}.definition-list{display:grid;grid-template-columns:180px 1fr;gap:12px 20px;margin:0}.definition-list dt{font-weight:800;color:#7114b8}.definition-list dd{margin:0;color:#6d6575}.comparison{width:100%;border-collapse:collapse;margin-top:20px;background:#fff}.comparison th,.comparison td{border:1px solid #e9e1ee;text-align:left;padding:12px;vertical-align:top}.comparison th{background:#f3eafd}.step-list{counter-reset:step;display:grid;gap:12px;padding:0;list-style:none}.step-list li{counter-increment:step;background:#fff;border:1px solid #e9e1ee;border-radius:12px;padding:16px 18px 16px 52px;position:relative}.step-list li:before{content:counter(step);position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:8px;background:#17121d;color:#fff;text-align:center;font-weight:800}@media(max-width:700px){.definition-list{grid-template-columns:1fr}.comparison{font-size:13px;display:block;overflow-x:auto}.contents ul{display:block}.contents li{margin:6px 0}}
 
   .site-trust{padding:13px 0;background:#f3eafd;color:#5c4f68;font-size:13px}.site-trust a,.site-sources a{color:#7114b8;font-weight:700}.site-sources{padding:46px 0;background:#fbf9fc;border-top:1px solid #e9e1ee}.site-sources h2{margin-top:0}.site-sources p{color:#6d6575;max-width:820px}.copyright{color:#9e91a1;font-size:12px}</style>
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -62,6 +61,9 @@
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+      },
+      "breadcrumb": {
+        "@id": "https://sibe-cad.vercel.app/cloud-cad-management/#breadcrumb"
       }
     },
     {
@@ -98,24 +100,6 @@
         "availability": "https://schema.org/InStock"
       },
       "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://sibe-cad.vercel.app/cloud-cad-management/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://sibe-cad.vercel.app/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Cloud CAD Management",
-          "item": "https://sibe-cad.vercel.app/cloud-cad-management/"
-        }
-      ]
     },
     {
       "@type": "FAQPage",
@@ -158,23 +142,40 @@
       "worksFor": {
         "@id": "https://sibe-cad.vercel.app/#organization"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sibe-cad.vercel.app/cloud-cad-management/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sibe-cad.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cloud CAD Management",
+          "item": "https://sibe-cad.vercel.app/cloud-cad-management/"
+        }
+      ]
     }
   ]
-}
-</script>
+}</script>
 <link href="/cloud-cad-management/index.md" rel="alternate" type="text/markdown"/>
 <link href="/feed.xml" rel="alternate" title="Sibe updates" type="application/rss+xml"/>
 <meta content="All rights reserved. Contact Sibe for reuse permissions." name="content-license"/>
-<link href="/schemamap.xml" rel="alternate" title="Sibe schema map" type="application/xml"/><link href="/cloud-cad-management/index.jsonld" rel="alternate" type="application/ld+json"/><link href="/license.xml" rel="license" type="application/xml"/><link rel="nlweb" href="/ask/" title="Sibe natural-language information endpoint"/>
-<link rel="mcp-server-card" href="/.well-known/mcp/server-card.json" title="Sibe MCP server card"/>
-<link rel="agent-card" href="/.well-known/agent-card.json" title="Sibe A2A agent card"/>
-<link rel="agent-skills" href="/.well-known/agent-skills/index.json" title="Sibe Agent Skills index"/>
-<link rel="ucp" href="/.well-known/ucp" title="Sibe UCP capability profile"/>
-<script src="/webmcp-agent.js" defer></script>
+<link href="/schemamap.xml" rel="alternate" title="Sibe schema map" type="application/xml"/><link href="/cloud-cad-management/index.jsonld" rel="alternate" type="application/ld+json"/><link href="/license.xml" rel="license" type="application/xml"/><link href="/ask/" rel="nlweb" title="Sibe natural-language information endpoint"/>
+<link href="/.well-known/mcp/server-card.json" rel="mcp-server-card" title="Sibe MCP server card"/>
+<link href="/.well-known/agent-card.json" rel="agent-card" title="Sibe A2A agent card"/>
+<link href="/.well-known/agent-skills/index.json" rel="agent-skills" title="Sibe Agent Skills index"/>
+<link href="/.well-known/ucp" rel="ucp" title="Sibe UCP capability profile"/>
+<script defer="" src="/webmcp-agent.js"></script>
 <style id="cloud-bulk-summary-css">.cloud-bulk-summary{padding:64px 0;background:#fbf7fd;border-top:1px solid #e6d9eb;border-bottom:1px solid #e6d9eb}.cloud-bulk-summary .container{width:min(calc(100% - 36px),1120px);margin:0 auto}.cloud-bulk-summary .kicker{display:block;margin-bottom:8px;color:#8a52a8;font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.cloud-bulk-summary h2{margin:0 0 12px;color:#241a2b;font-size:clamp(28px,4vw,44px);line-height:1.1}.cloud-bulk-summary .lead{max-width:820px;color:#6d6575;font-size:17px}.cloud-bulk-summary .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}.cloud-bulk-summary article{padding:20px;border:1px solid #e6d9eb;border-radius:16px;background:#fff}.cloud-bulk-summary article strong{display:block;margin-bottom:8px;color:#7114b8}.cloud-bulk-summary article p{margin:0;color:#6d6575}.cloud-bulk-summary dl{display:grid;grid-template-columns:170px 1fr;gap:10px 20px;margin:26px 0;padding:20px;border:1px solid #e6d9eb;border-radius:16px;background:#fff}.cloud-bulk-summary dt{color:#7114b8;font-weight:900}.cloud-bulk-summary dd{margin:0;color:#6d6575}.cloud-bulk-summary ol{margin:24px 0 0;padding-left:24px;color:#6d6575}.cloud-bulk-summary li{padding:6px 0}.cloud-bulk-summary cite{display:block;margin-top:10px;font-size:12px;font-style:normal;font-weight:800}.cloud-bulk-summary cite a{color:#7114b8}@media(max-width:760px){.cloud-bulk-summary .cards{grid-template-columns:1fr}.cloud-bulk-summary dl{grid-template-columns:1fr}.cloud-bulk-summary dd{margin-bottom:8px}}</style>
 <style id="branding-alignment-fix">.brand{display:inline-flex;align-items:center;gap:9px;line-height:1;text-decoration:none}.brand-logo{display:block;width:34px;height:34px;flex:0 0 34px;object-fit:contain}.brand-wordmark{display:inline-flex;align-items:center;line-height:1;white-space:nowrap}.footer-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}.footer-brand{display:inline-flex;align-items:center;gap:9px;min-height:28px;line-height:1;text-decoration:none}.footer-brand img{display:block;width:28px;height:28px;flex:0 0 28px;object-fit:contain}.footer-brand>span{display:inline-flex;align-items:center;line-height:1;white-space:nowrap}@media(max-width:700px){.footer-brand{min-height:30px}}</style>
 <style id="skip-link-visibility-fix">.skip-link{position:fixed!important;left:12px!important;top:12px!important;z-index:10000!important;display:inline-flex!important;align-items:center!important;visibility:visible!important;opacity:1!important;background:#17121d!important;color:#fff!important;padding:10px 14px!important;border:2px solid #fff!important;border-radius:8px!important;text-decoration:none!important;font-weight:800!important;line-height:1.2!important;box-shadow:0 6px 18px rgba(23,18,29,.24)!important}.skip-link:hover,.skip-link:focus-visible{background:#7114b8!important;color:#fff!important;outline:3px solid #df3f83!important;outline-offset:3px}@media(max-width:700px){.skip-link{top:78px!important;left:12px!important}}</style>
-<link rel="alternate" type="text/markdown" href="/okf/index.md" title="Sibe Open Knowledge Format bundle"/>
+<link href="/okf/index.md" rel="alternate" title="Sibe Open Knowledge Format bundle" type="text/markdown"/>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -192,7 +193,7 @@
 </div><a href="/ask/">Ask Sibe</a></nav></div></header>
 <main id="main-content">
 <section class="hero"><div class="container"><span class="eyebrow">Cloud CAD management for SolidWorks</span><h1 id="manage-solidworks-data-in-the-cloud-without-adding-infrastructure">Manage SolidWorks data in the cloud without adding infrastructure.</h1><p>Sibe gives engineering teams one workspace for SolidWorks version control, CAD file management, revision approvals, BOM data, and browser-based design collaboration.</p><div class="actions"><a class="btn" href="https://app.sibe.io/">Start the 14-day free trial</a><a class="btn alt" href="/">Explore the Sibe workflow</a></div></div></section>
-<nav aria-label="Breadcrumb" class="breadcrumb"><a href="https://sibe-cad.vercel.app/">Home</a> <span aria-hidden="true">›</span> <span>Cloud CAD Management</span></nav><p class="meta-line"><strong>Published:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Reviewed and updated:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Editor:</strong> Sibe Editorial Team</p>
+<nav aria-label="Breadcrumb" class="breadcrumb"><a href="/">Home</a> <span aria-hidden="true">›</span> <span>Cloud CAD Management</span></nav><p class="meta-line"><strong>Published:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Reviewed and updated:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Editor:</strong> Sibe Editorial Team</p>
 <nav aria-labelledby="contents-title" class="contents"><h2 id="contents-title">On this page</h2><ul><li><a href="#keep-the-cad-workflow-familiar-while-making-product-data-easier-to-control">Keep the CAD workflow familiar while making product data easier to control.</a></li><li><a href="#start-small-then-standardize-the-way-designs-move-to-release">Start small, then standardize the way designs move to release.</a></li><li><a href="#cloud-cad-management-questions">Cloud CAD management questions</a></li></ul></nav>
 <section><div class="container"><div class="head"><span class="kicker">Cloud PDM for SolidWorks</span><h2 id="keep-the-cad-workflow-familiar-while-making-product-data-easier-to-control">Keep the CAD workflow familiar while making product data easier to control.</h2><p>Instead of relying only on shared folders, email attachments, and manual spreadsheets, connect SolidWorks work to a cloud workspace where the current version, review state, and product structure stay visible.</p></div><div class="grid"><article class="card"><h3 id="solidworks-version-control">SolidWorks version control</h3><p>Check parts, drawings, and subassemblies in and out through the native add-in. Track who changed a file, when it changed, and which version should move forward.</p></article><article class="card"><h3 id="remote-access-without-a-vpn">Remote access without a VPN</h3><p>Support distributed engineering work without customer-managed PDM servers or a separate VPN project. Start with a real assembly and evaluate the workflow quickly.</p></article><article class="card"><h3 id="browser-based-collaboration">Browser-based collaboration</h3><p>Share controlled 2D and 3D views with project managers, customers, suppliers, and other non-CAD reviewers without requiring every stakeholder to install SolidWorks.</p></article><article class="card"><h3 id="product-data-around-the-assembly">Product data around the assembly</h3><p>Use the assembly structure as the starting point for references, metadata, BOM management, revisions, and manufacturing-ready exports.</p></article></div></div></section>
 <section id="quick-answers"><div class="container"><div class="head"><span class="kicker">Quick answers</span><h2 id="cloud-cad-management-at-a-glance">Cloud CAD management at a glance</h2><p class="answer-lead"><strong>Cloud CAD management for SolidWorks</strong> is a shared online workspace for files, references, versions, revisions, product data, and browser-based collaboration. Sibe connects that workspace to the SolidWorks workflow so teams can control designs without relying only on folders, email, or customer-managed servers.</p></div><dl class="definition-list"><dt>Version control</dt><dd>Check files in and out, record who changed them, and keep a visible history of versions.</dd><dt>Revision approval</dt><dd>Move designs from active work to review and release with decision context attached to the file.</dd><dt>Browser collaboration</dt><dd>Share selected 2D and 3D designs with non-CAD reviewers, suppliers, and customers.</dd><dt>BOM management</dt><dd>Use assembly structure and SolidWorks metadata as a starting point for downstream product data.</dd></dl><table class="comparison"><caption>Cloud PDM workflow compared with shared-drive management</caption><thead><tr><th>Workflow need</th><th>Shared-drive approach</th><th>Cloud PDM approach</th></tr></thead><tbody><tr><td>Current version</td><td>Folder names and manual checks</td><td>Version history and check-in/check-out</td></tr><tr><td>Approval status</td><td>Email threads and spreadsheets</td><td>Visible review and release states</td></tr><tr><td>External review</td><td>Exports, screenshots, or attachments</td><td>Controlled browser-based design views</td></tr><tr><td>Product structure</td><td>Separate BOM maintenance</td><td>Assembly-aware product data workflow</td></tr></tbody></table></div></section><section id="workflow-steps"><div class="container"><div class="head"><span class="kicker">How to evaluate Sibe</span><h2 id="start-with-one-real-solidworks-assembly">Start with one real SolidWorks assembly.</h2><p>A focused evaluation lets a team validate the workflow before changing its entire PDM process.</p></div><ol class="step-list"><li><strong>Create a workspace.</strong> Start with a representative engineering project and the people who need to review it.</li><li><strong>Connect SolidWorks.</strong> Test check-in, check-out, references, version history, and metadata on real files.</li><li><strong>Review and release.</strong> Share a browser view, capture feedback, and move an approved revision forward.</li></ol></div></section>
@@ -204,7 +205,7 @@
 <footer>
 <div class="container footer-row">
 <a aria-label="Sibe home" class="footer-brand" href="/">
-<img alt="Sibe logo" height="28" src="/assets/sibe-logo.png" width="28" loading="lazy"/>
+<img alt="Sibe logo" height="28" loading="lazy" src="/assets/sibe-logo.png" width="28"/>
 <span>sibe<span>.</span></span>
 </a>
 <span class="footer-links">

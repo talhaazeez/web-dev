@@ -36,7 +36,7 @@ def breadcrumb_graph(page):
         '@type': 'BreadcrumbList',
         '@id': f"https://sibe-cad.vercel.app{page['path']}#breadcrumb",
         'itemListElement': [
-            {'@type': 'ListItem', 'position': 1, 'name': 'Sibe', 'item': 'https://sibe-cad.vercel.app/'},
+            {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://sibe-cad.vercel.app/'},
             {'@type': 'ListItem', 'position': 2, 'name': page['label'], 'item': page['url']},
         ],
     }

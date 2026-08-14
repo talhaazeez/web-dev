@@ -35,7 +35,7 @@ for slug, (label, url) in EXPECTED.items():
         breadcrumb = next(item for item in graph if item.get('@type') == 'BreadcrumbList')
         items = breadcrumb['itemListElement']
         assert [item['position'] for item in items] == [1, 2], source
-        assert items[0]['name'] == 'Sibe' and items[0]['item'] == 'https://sibe-cad.vercel.app/'
+        assert items[0]['name'] == 'Home' and items[0]['item'] == 'https://sibe-cad.vercel.app/'
         assert items[1]['name'] == label and items[1]['item'] == url
         webpage = next(item for item in graph if item.get('@type') == 'WebPage')
         assert webpage['breadcrumb']['@id'] == breadcrumb['@id']
