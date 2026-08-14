@@ -1,0 +1,130 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/#webpage",
+      "name": "SolidWorks PDM Migration to the Cloud",
+      "url": "https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/",
+      "description": "Plan a practical SolidWorks PDM migration with phased evaluation, reference-aware files, version control, and browser reviews.",
+      "inLanguage": "en",
+      "dateModified": "2026-08-15",
+      "author": {
+        "@id": "https://sibe-cad.vercel.app/#editorial-team"
+      },
+      "publisher": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      },
+      "about": {
+        "@id": "https://sibe-cad.vercel.app/#software"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero p"
+        ]
+      },
+      "datePublished": "2026-08-15",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sibe-cad.vercel.app/#organization",
+      "name": "Sibe",
+      "url": "https://www.sibe.io/",
+      "logo": "https://sibe-cad.vercel.app/assets/sibe-logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sibe-cad.vercel.app/#software",
+      "name": "Sibe",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Windows",
+      "url": "https://sibe-cad.vercel.app/",
+      "featureList": [
+        "SolidWorks version control",
+        "CAD file management",
+        "Revision approval workflows",
+        "BOM management",
+        "Browser-based 3D design collaboration"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "name": "14-day free trial",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://app.sibe.io/",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sibe-cad.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "SolidWorks PDM Migration",
+          "item": "https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do we need to migrate every file before evaluating Sibe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A focused evaluation can start with a representative project and a subset of files, allowing the team to test the workflow before planning a wider change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will SolidWorks assembly references remain useful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The migration approach should validate references, parts, drawings, and subassemblies on a real project so the team can confirm the product structure works as expected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can remote reviewers participate during migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Browser-based design reviews can be used to involve non-CAD stakeholders and external partners while the engineering team tests the controlled workflow."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sibe-cad.vercel.app/#editorial-team",
+      "name": "Sibe Editorial Team",
+      "url": "https://www.sibe.io/about",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "worksFor": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      }
+    }
+  ]
+}

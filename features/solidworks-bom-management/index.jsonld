@@ -1,0 +1,130 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sibe-cad.vercel.app/features/solidworks-bom-management/#webpage",
+      "name": "SolidWorks BOM Management and Manufacturing Exports",
+      "url": "https://sibe-cad.vercel.app/features/solidworks-bom-management/",
+      "description": "Manage SolidWorks BOMs from assembly structure, surface part metadata, and prepare product data for manufacturing with Sibe.",
+      "inLanguage": "en",
+      "dateModified": "2026-08-15",
+      "author": {
+        "@id": "https://sibe-cad.vercel.app/#editorial-team"
+      },
+      "publisher": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      },
+      "about": {
+        "@id": "https://sibe-cad.vercel.app/#software"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero p"
+        ]
+      },
+      "datePublished": "2026-08-15",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sibe-cad.vercel.app/#organization",
+      "name": "Sibe",
+      "url": "https://www.sibe.io/",
+      "logo": "https://sibe-cad.vercel.app/assets/sibe-logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sibe-cad.vercel.app/#software",
+      "name": "Sibe",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Windows",
+      "url": "https://sibe-cad.vercel.app/",
+      "featureList": [
+        "SolidWorks version control",
+        "CAD file management",
+        "Revision approval workflows",
+        "BOM management",
+        "Browser-based 3D design collaboration"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "name": "14-day free trial",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://app.sibe.io/",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sibe-cad.vercel.app/features/solidworks-bom-management/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sibe-cad.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "SolidWorks BOM Management",
+          "item": "https://sibe-cad.vercel.app/features/solidworks-bom-management/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sibe-cad.vercel.app/features/solidworks-bom-management/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can Sibe generate an indented BOM from a SolidWorks assembly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sibe is designed to use managed assembly references and product structure as the starting point for an indented BOM workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can BOMs include SolidWorks custom properties?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Relevant properties such as part numbers, descriptions, materials, and project identifiers can be surfaced as product data for downstream workflows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can BOM information be exported for manufacturing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sibe’s product positioning includes structured exports for manufacturing. Confirm the current export format and plan capability for your specific process."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sibe-cad.vercel.app/#editorial-team",
+      "name": "Sibe Editorial Team",
+      "url": "https://www.sibe.io/about",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "worksFor": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      }
+    }
+  ]
+}

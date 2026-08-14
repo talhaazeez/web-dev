@@ -1,0 +1,130 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sibe-cad.vercel.app/features/solidworks-revision-approval-workflow/#webpage",
+      "name": "SolidWorks Revision Approval Workflow",
+      "url": "https://sibe-cad.vercel.app/features/solidworks-revision-approval-workflow/",
+      "description": "Create a clear SolidWorks revision approval workflow with check-in, release states, browser reviews, and an audit trail in Sibe.",
+      "inLanguage": "en",
+      "dateModified": "2026-08-15",
+      "author": {
+        "@id": "https://sibe-cad.vercel.app/#editorial-team"
+      },
+      "publisher": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      },
+      "about": {
+        "@id": "https://sibe-cad.vercel.app/#software"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero p"
+        ]
+      },
+      "datePublished": "2026-08-15",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sibe-cad.vercel.app/#organization",
+      "name": "Sibe",
+      "url": "https://www.sibe.io/",
+      "logo": "https://sibe-cad.vercel.app/assets/sibe-logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sibe-cad.vercel.app/#software",
+      "name": "Sibe",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Windows",
+      "url": "https://sibe-cad.vercel.app/",
+      "featureList": [
+        "SolidWorks version control",
+        "CAD file management",
+        "Revision approval workflows",
+        "BOM management",
+        "Browser-based 3D design collaboration"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "name": "14-day free trial",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://app.sibe.io/",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sibe-cad.vercel.app/features/solidworks-revision-approval-workflow/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sibe-cad.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Revision Approval Workflow",
+          "item": "https://sibe-cad.vercel.app/features/solidworks-revision-approval-workflow/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sibe-cad.vercel.app/features/solidworks-revision-approval-workflow/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does Sibe prevent the wrong revision from being used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Released revisions can be locked, making the approved design state visible and reducing the risk that manufacturing or suppliers work from an outdated file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can approvers review a SolidWorks design in a browser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A controlled browser link can bring non-CAD stakeholders into the review without requiring them to install SolidWorks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the approval decision recorded?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The workflow is designed to keep release notes, reviewer comments, state changes, and approval history attached to the relevant version."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sibe-cad.vercel.app/#editorial-team",
+      "name": "Sibe Editorial Team",
+      "url": "https://www.sibe.io/about",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "worksFor": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      }
+    }
+  ]
+}

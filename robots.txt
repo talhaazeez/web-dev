@@ -5,3 +5,5 @@ Allow: /
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 Sitemap: https://sibe-cad.vercel.app/sitemap.xml
+
+# IndexNow ownership key location: https://sibe-cad.vercel.app/834b662808ed78415e21e6edd3940f70482296a32e85195392a2573e3a8acf1f.txt

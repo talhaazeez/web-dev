@@ -1,0 +1,130 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sibe-cad.vercel.app/features/cad-file-management/#webpage",
+      "name": "CAD File Management with a SolidWorks Add-in",
+      "url": "https://sibe-cad.vercel.app/features/cad-file-management/",
+      "description": "Manage SolidWorks CAD files, references, metadata, versions, and reviews in one cloud workspace with Sibe.",
+      "inLanguage": "en",
+      "dateModified": "2026-08-15",
+      "author": {
+        "@id": "https://sibe-cad.vercel.app/#editorial-team"
+      },
+      "publisher": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      },
+      "about": {
+        "@id": "https://sibe-cad.vercel.app/#software"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero p"
+        ]
+      },
+      "datePublished": "2026-08-15",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sibe-cad.vercel.app/#organization",
+      "name": "Sibe",
+      "url": "https://www.sibe.io/",
+      "logo": "https://sibe-cad.vercel.app/assets/sibe-logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sibe-cad.vercel.app/#software",
+      "name": "Sibe",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Windows",
+      "url": "https://sibe-cad.vercel.app/",
+      "featureList": [
+        "SolidWorks version control",
+        "CAD file management",
+        "Revision approval workflows",
+        "BOM management",
+        "Browser-based 3D design collaboration"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "name": "14-day free trial",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://app.sibe.io/",
+        "availability": "https://schema.org/InStock"
+      },
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sibe-cad.vercel.app/features/cad-file-management/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sibe-cad.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CAD File Management",
+          "item": "https://sibe-cad.vercel.app/features/cad-file-management/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sibe-cad.vercel.app/features/cad-file-management/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Sibe work with existing SolidWorks files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sibe is designed to connect with existing SolidWorks projects through its native add-in so teams can evaluate the workflow on real files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Sibe keep assembly references organized?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The workflow is built around related parts, drawings, and subassemblies rather than treating every CAD file as an isolated document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can non-CAD teammates search or review design data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teams can use browser-based collaboration and controlled sharing so non-CAD stakeholders can review selected product information without installing SolidWorks."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sibe-cad.vercel.app/#editorial-team",
+      "name": "Sibe Editorial Team",
+      "url": "https://www.sibe.io/about",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "worksFor": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      }
+    }
+  ]
+}

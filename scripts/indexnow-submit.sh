@@ -38,6 +38,13 @@ URLS=(
   "https://${HOST}/robots.txt"
   "https://${HOST}/llms.txt"
   "https://${HOST}/llms-full.txt"
+  "https://${HOST}/feed.xml"
+  "https://${HOST}/schemamap.xml"
+  "https://${HOST}/license.xml"
+  "https://${HOST}/contact/index.md"
+  "https://${HOST}/editorial-methodology/index.md"
+  "https://${HOST}/cloud-cad-management/index.md"
+  "https://${HOST}/cloud-cad-management/index.jsonld"
 )
 
 PAYLOAD="$(printf '%s\n' "${URLS[@]}" | sed 's/.*/"&"/' | paste -sd, -)"
