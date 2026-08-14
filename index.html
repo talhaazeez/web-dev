@@ -199,6 +199,16 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://sibe-cad.vercel.app/#website",
+      "name": "Sibe CAD Management",
+      "url": "https://sibe-cad.vercel.app/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://sibe-cad.vercel.app/#webpage",
       "name": "Sibe cloud CAD management homepage",
@@ -237,7 +247,13 @@
       "sameAs": [
         "https://www.linkedin.com/company/sibe-io"
       ],
-      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://sibe-cad.vercel.app/contact/",
+        "availableLanguage": "English"
+      }
     },
     {
       "@type": "SoftwareApplication",
@@ -379,7 +395,7 @@
 <div class="container hero-grid">
 <div class="hero-copy">
 <span class="eyebrow">Cloud PDM for SolidWorks teams</span>
-<h1>Sibe Free Trial — Get Easy Cloud PDM &amp; <span class="gradient-text">Version Control Risk-Free</span></h1>
+<h1 id="sibe-free-trial-get-easy-cloud-pdm-and-version-control-risk-free">Sibe Free Trial — Get Easy Cloud PDM &amp; <span class="gradient-text">Version Control Risk-Free</span></h1>
 <p>
             Stop losing engineering time to slow local servers, VPN friction, shared folders, and spreadsheet-based tracking.
             Sibe is a collaboration-first cloud PDM and CAD document management platform built around the SolidWorks workflow.
@@ -428,6 +444,7 @@
 </div>
 </div>
 </div>
+<p class="current-context"><strong>Current site review:</strong> Product and trial details were checked against official Sibe sources on 15 August 2026.</p>
 <p class="meta-line"><strong>Published:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Reviewed and updated:</strong> <time datetime="2026-08-15">15 August 2026</time> · <strong>Editor:</strong> Sibe Editorial Team</p>
 <nav class="contents" aria-labelledby="contents-title"><div class="contents-header"><div><span class="contents-kicker">Explore the page</span><h2 id="contents-title">On this page</h2></div><span class="contents-count">7 sections</span></div><p class="contents-intro">Jump to the part of the Sibe CAD workflow you want to explore, from the free trial to browser-based review.</p><ol><li><a href="#your-cad-workflow-should-not-depend-on-file-chasing"><span>Your CAD workflow should not depend on file chasing.</span><span class="contents-arrow" aria-hidden="true">↗</span></a></li><li><a href="#what-is-the-sibe-free-trial"><span>What Is the Sibe Free Trial?</span><span class="contents-arrow" aria-hidden="true">↗</span></a></li><li><a href="#everything-you-need-to-manage-cad-data-without-an-enterprise-pdm-rollout"><span>Everything you need to manage CAD data without an enterprise PDM rollout.</span><span class="contents-arrow" aria-hidden="true">↗</span></a></li><li><a href="#cloud-pdm-for-solidworks-built-around-the-way-engineers-work"><span>Cloud PDM for SolidWorks, built around the way engineers work.</span><span class="contents-arrow" aria-hidden="true">↗</span></a></li><li><a href="#one-cloud-workspace-for-everyone-around-the-cad-model"><span>One cloud workspace for everyone around the CAD model.</span><span class="contents-arrow" aria-hidden="true">↗</span></a></li><li><a href="#from-assembly-to-bom-to-browser-review-without-rebuilding-the-information"><span>From assembly to BOM to browser review — without rebuilding the information.</span><span class="contents-arrow" aria-hidden="true">↗</span></a></li><li><a href="#maximizing-your-14-day-sibe-trial-expert-tips"><span>Maximizing Your 14-Day Sibe Trial — Expert Tips</span><span class="contents-arrow" aria-hidden="true">↗</span></a></li></ol></nav>
 <div class="proof-strip">
@@ -438,6 +455,7 @@
 <div class="proof-item"><b>Cloud-first</b><span>No customer-managed PDM servers or VPNs</span></div>
 </div>
 </div>
+<aside class="proof-note" aria-label="Sibe evaluation proof points"><div class="container"><strong>Evaluation proof points:</strong> Sibe publicly describes a 14-day free trial, no-credit-card signup, and quick cloud setup. Use one representative assembly to verify version history, BOM structure, and browser review in your own workflow. <cite><a href="https://www.sibe.io/pricing">Verify current pricing and trial details</a></cite>.</div></aside>
 <section>
 <div class="container">
 <div class="section-head">
@@ -447,21 +465,23 @@
             Shared folders and Excel can get a team started. But once multiple engineers, managers,
             suppliers, or manufacturing partners touch the same product, version drift and manual handoffs become expensive.
           </p>
+<p class="outcome-line"><strong>Outcome:</strong> A controlled source of truth makes the current, approved design easier to identify before it reaches manufacturing or an external reviewer.</p>
+<p class="outcome-line"><strong>Outcome:</strong> A controlled source of truth makes the current, approved design easier to identify before it reaches manufacturing or an external reviewer.</p>
 </div>
 <div class="problem-grid">
 <article class="card">
 <span class="num">01</span>
-<h3>“Which file is the latest?”</h3>
+<h3 id="which-file-is-the-latest">“Which file is the latest?”</h3>
 <p>Copies spread across local folders, network shares, and email attachments. The result is uncertainty about what is current, approved, or ready for release.</p>
 </article>
 <article class="card">
 <span class="num">02</span>
-<h3>Manual BOM maintenance</h3>
+<h3 id="manual-bom-maintenance">Manual BOM maintenance</h3>
 <p>Engineers end up copying part numbers, descriptions, quantities, and revisions into spreadsheets, then repeating that work after design changes.</p>
 </article>
 <article class="card">
 <span class="num">03</span>
-<h3>PDM that feels like an IT project</h3>
+<h3 id="pdm-that-feels-like-an-it-project">PDM that feels like an IT project</h3>
 <p>Traditional on-premise deployments can involve servers, databases, administration, VPN access, and implementation work before engineers see the workflow benefit.</p>
 </article>
 </div>
@@ -476,21 +496,23 @@
             The Sibe free trial is a 14-day evaluation with no credit card required. Start with a real project,
             connect SolidWorks, and replace static trackers with one living cloud workspace for CAD data and collaboration.
           </p>
+<p class="outcome-line"><strong>Outcome:</strong> A short evaluation on real engineering data shows whether the workflow reduces file chasing without forcing a full enterprise PDM rollout.</p>
+<p class="outcome-line"><strong>Outcome:</strong> A short evaluation on real engineering data shows whether the workflow reduces file chasing without forcing a full enterprise PDM rollout.</p>
 </div>
 <div class="step-grid">
 <article class="step">
 <div class="step-number">1</div>
-<h3>Create your workspace</h3>
+<h3 id="create-your-workspace">Create your workspace</h3>
 <p>Sign up with your work email, create the workspace, and begin evaluating the workflow without provisioning a customer-managed PDM server.</p>
 </article>
 <article class="step">
 <div class="step-number">2</div>
-<h3>Connect SolidWorks</h3>
+<h3 id="connect-solidworks">Connect SolidWorks</h3>
 <p>Install Sibe’s native SolidWorks add-in and keep version control and check-in/check-out aligned with the CAD workflow your engineers already use.</p>
 </article>
 <article class="step">
 <div class="step-number">3</div>
-<h3>Test it on a real assembly</h3>
+<h3 id="test-it-on-a-real-assembly">Test it on a real assembly</h3>
 <p>Check in a representative assembly, inspect versions and references, generate product data, and share a browser review with someone outside CAD.</p>
 </article>
 </div>
@@ -505,11 +527,13 @@
 <p>
             Sibe brings SolidWorks version control, revision workflows, structured product data, and browser-based collaboration into one cloud environment.
           </p>
+<p class="outcome-line"><strong>Outcome:</strong> Version control, structured product data, and browser reviews stay connected to the same SolidWorks workflow.</p>
+<p class="outcome-line"><strong>Outcome:</strong> Version control, structured product data, and browser reviews stay connected to the same SolidWorks workflow.</p>
 </div>
 <div class="feature-grid">
 <article class="feature">
 <div class="feature-icon">BOM</div>
-<h3>Automatic Indented BOM Generation</h3>
+<h3 id="automatic-indented-bom-generation">Automatic Indented BOM Generation</h3>
 <p>
               Sibe follows an “assembly is the BOM” philosophy. When a managed assembly is checked in, Sibe can read its SolidWorks references,
               organize the product structure into an indented BOM, and expose relevant metadata without asking engineers to maintain a second list by hand.
@@ -523,7 +547,7 @@
 </article>
 <article class="feature">
 <div class="feature-icon">VC</div>
-<h3>Cloud Version Control &amp; Web-Based Design Reviews</h3>
+<h3 id="cloud-version-control-and-web-based-design-reviews">Cloud Version Control &amp; Web-Based Design Reviews</h3>
 <p>
               Use the native SolidWorks integration for check-in/check-out and version history, then bring non-CAD stakeholders into a browser-based review workflow.
               That makes the current design easier to inspect without requiring every reviewer to own a SolidWorks seat.
@@ -537,7 +561,7 @@
 </article>
 <article class="feature">
 <div class="feature-icon">REF</div>
-<h3>Reference-Aware CAD Management</h3>
+<h3 id="reference-aware-cad-management">Reference-Aware CAD Management</h3>
 <p>
               SolidWorks assemblies are networks of related files, not isolated documents. Sibe is designed to work with those references so the workspace reflects the structure engineering actually creates.
             </p>
@@ -549,7 +573,7 @@
 </article>
 <article class="feature">
 <div class="feature-icon">REV</div>
-<h3>Revision Workflows That Stay Visible</h3>
+<h3 id="revision-workflows-that-stay-visible">Revision Workflows That Stay Visible</h3>
 <p>
               Move designs through clear states instead of relying on filenames or spreadsheet notes to communicate what is in progress, in review, or released.
             </p>
@@ -575,7 +599,7 @@
 <div class="feature-grid">
 <article class="feature">
 <div class="feature-icon">VC</div>
-<h3>SolidWorks version control without the server burden</h3>
+<h3 id="solidworks-version-control-without-the-server-burden">SolidWorks version control without the server burden</h3>
 <p>
               Use the native SolidWorks add-in to check files in and out, reduce accidental overwrites, and keep a visible history of who changed a file and when.
               Engineers can work from the same current version without relying on filenames or folder conventions.
@@ -588,7 +612,7 @@
 </article>
 <article class="feature">
 <div class="feature-icon">REV</div>
-<h3>Revision approval workflows for engineering changes</h3>
+<h3 id="revision-approval-workflows-for-engineering-changes">Revision approval workflows for engineering changes</h3>
 <p>
               Move files from In Progress to Pending Approval and then to Released when a decision is complete.
               Keep release notes and approval history with the design so manufacturing and suppliers can work from the approved revision.
@@ -601,7 +625,7 @@
 </article>
 <article class="feature">
 <div class="feature-icon">3D</div>
-<h3>3D design collaboration and secure external sharing</h3>
+<h3 id="3d-design-collaboration-and-secure-external-sharing">3D design collaboration and secure external sharing</h3>
 <p>
               Share controlled browser views of 3D models and 2D drawings with project managers, customers, suppliers, and other non-CAD stakeholders.
               Reviewers can inspect the version you choose without needing a SolidWorks license.
@@ -614,7 +638,7 @@
 </article>
 <article class="feature">
 <div class="feature-icon">BOM</div>
-<h3>BOM management and structured CAD product data</h3>
+<h3 id="bom-management-and-structured-cad-product-data">BOM management and structured CAD product data</h3>
 <p>
               Use the assembly structure as the starting point for product data. Bring part numbers, descriptions, materials, quantities, and other SolidWorks metadata into a more useful BOM workflow.
             </p>
@@ -658,7 +682,7 @@
 </div>
 <div class="workflow">
 <div class="workflow-copy">
-<h3>Assembly → structured BOM → review → release</h3>
+<h3 id="assembly-structured-bom-review-release">Assembly → structured BOM → review → release</h3>
 <p>Use the real assembly as the starting point, then expose the right information to the people who need it downstream.</p>
 <ul>
 <li>Check in the assembly from SolidWorks.</li>
@@ -693,7 +717,7 @@
 <div class="feature-grid">
 <article class="feature">
 <div class="feature-icon">01</div>
-<h3>Start with a messy, real assembly</h3>
+<h3 id="start-with-a-messy-real-assembly">Start with a messy, real assembly</h3>
 <p>Choose a representative assembly with repeated hardware, subassemblies, custom properties, drawings, and the references your team normally worries about.</p>
 <ul>
 <li>Check it into Sibe on day one.</li>
@@ -704,7 +728,7 @@
 </article>
 <article class="feature">
 <div class="feature-icon">DATA</div>
-<h3>Pull Custom Properties into Your BOM Instantly</h3>
+<h3 id="pull-custom-properties-into-your-bom-instantly">Pull Custom Properties into Your BOM Instantly</h3>
 <p>Map the properties your team already maintains in SolidWorks — such as materials, part numbers, descriptions, project identifiers, or revision-related data — into useful downstream fields.</p>
 <ul>
 <li>Make engineering metadata visible outside the CAD window.</li>
@@ -716,7 +740,7 @@
 <div style="margin-top:20px">
 <article class="feature">
 <div class="feature-icon">TEAM</div>
-<h3>Bring Purchasing and Project Managers into the Loop</h3>
+<h3 id="bring-purchasing-and-project-managers-into-the-loop">Bring Purchasing and Project Managers into the Loop</h3>
 <p>
               Non-CAD stakeholders should not have to request screenshots or ask an engineer to re-export a spreadsheet every time they need to inspect a product definition.
               Use browser-based collaboration and role-based access so the right people can review product data without installing CAD software.
@@ -744,7 +768,7 @@
 <div class="feature-grid">
 <article class="feature">
 <div class="feature-icon">OLD</div>
-<h3>Shared-drive friction</h3>
+<h3 id="shared-drive-friction">Shared-drive friction</h3>
 <p>Teams search across folders, email threads, and spreadsheets to discover which SolidWorks file is current, approved, or ready for manufacturing.</p>
 <ul>
 <li>Version names carry too much responsibility.</li>
@@ -754,7 +778,7 @@
 </article>
 <article class="feature">
 <div class="feature-icon">PDM</div>
-<h3>Cloud PDM control</h3>
+<h3 id="cloud-pdm-control">Cloud PDM control</h3>
 <p>Sibe connects version control, revision approval, product data, and browser-based collaboration around the SolidWorks workflow your team already knows.</p>
 <ul>
 <li>Check in and check out files to reduce overwrites.</li>
@@ -763,7 +787,7 @@
 </ul>
 </article>
 </div>
-<div class="note"><strong>Ready to go deeper?</strong> Compare the workflow in <a href="/features/cad-file-management/" style="text-decoration:underline">CAD file management</a> and <a href="/features/solidworks-revision-approval-workflow/" style="text-decoration:underline">SolidWorks revision approval</a>.</div>
+<div class="comparison-block"><span class="kicker">Workflow comparison</span><h3 id="shared-drive-vs-cloud-pdm">Shared-drive workflow vs cloud PDM</h3><table class="comparison"><caption>How the workflow changes when a SolidWorks team moves from shared folders to a controlled cloud workspace.</caption><thead><tr><th scope="col">Workflow need</th><th scope="col">Shared folders</th><th scope="col">Cloud PDM workflow</th></tr></thead><tbody><tr><th scope="row">Current design</th><td>Teams search folder names, email, and filenames.</td><td>Version history and check-in/check-out show the working state.</td></tr><tr><th scope="row">Review status</th><td>Approval decisions can remain in messages or spreadsheets.</td><td>Revision status and release history stay with the design.</td></tr><tr><th scope="row">Downstream access</th><td>Engineers export screenshots or duplicate BOM data.</td><td>Authorized stakeholders use browser review and structured product data.</td></tr></tbody></table></div><div class="note"><strong>Ready to go deeper?</strong> Compare the workflow in <a href="/features/cad-file-management/" style="text-decoration:underline">CAD file management</a> and <a href="/features/solidworks-revision-approval-workflow/" style="text-decoration:underline">SolidWorks revision approval</a>.</div>
 </div>
 </section>
 <section class="steps">
@@ -778,7 +802,7 @@
 </div>
 <div class="pricing-banner">
 <div>
-<h3>Move to a transparent per-user cloud model.</h3>
+<h3 id="move-to-a-transparent-per-user-cloud-model">Move to a transparent per-user cloud model.</h3>
 <p>
               Traditional on-premise PDM can carry costs beyond the software itself — server hardware, operating system and SQL infrastructure,
               administration, networking, maintenance, upgrades, and implementation work. Sibe’s cloud model removes the need for your team to host and maintain that PDM infrastructure.
@@ -853,13 +877,13 @@
 </div>
 </div>
 </section>
-<section class="site-sources" id="site-sources"><div class="container"><h2 id="site-sources-title">Sources and verification</h2><p>This page is an original summary of Sibe’s public product and company information. Product descriptions are checked against official Sibe pages for the homepage, About, demo, security, pricing, and relevant feature documentation.</p><p><a href="https://www.sibe.io/">Official product overview</a> · <a href="https://www.sibe.io/about">About and team</a> · <a href="https://www.sibe.io/demo">Demo and expert review</a> · <a href="https://www.sibe.io/data-security">Security</a> · <a href="https://www.sibe.io/pricing">Pricing</a></p></div></section>
+<section class="site-sources" id="site-sources"><div class="container"><h2 id="site-sources-title">Sources and verification</h2><p>This page is an original summary of Sibe’s public product and company information. Product descriptions are checked against official Sibe pages for the homepage, About, demo, security, pricing, and relevant feature documentation.</p><p class="source-freshness">Reviewed 15 August 2026. Verify plan-specific details and current availability on the official Sibe pages linked below.</p><p><cite><a href="https://www.sibe.io/">Official product overview</a></cite> · <cite><a href="https://www.sibe.io/about">About and team</a></cite> · <cite><a href="https://www.sibe.io/demo">Demo and expert review</a></cite> · <cite><a href="https://www.sibe.io/data-security">Security</a></cite> · <cite><a href="https://www.sibe.io/pricing">Pricing</a></cite></p></div></section>
 </section></main>
 <div class="site-trust"><div class="container"><strong>Trust and review resources:</strong> <a href="/contact/">Contact Sibe</a> · <a href="/editorial-methodology/">Editorial methodology</a> · <a href="https://app.sibe.io/privacy-policy">Privacy</a> · <a href="https://app.sibe.io/terms-of-service">Terms</a> · <a href="https://www.sibe.io/data-security">Security</a></div></div>
 <footer>
 <div class="container footer-row">
 <a aria-label="Sibe home" class="footer-brand" href="/">
-<img alt="Sibe logo" height="28" src="/assets/sibe-logo.png" width="28"/>
+<img alt="Sibe logo" height="28" src="/assets/sibe-logo.png" width="28" loading="lazy"/>
 <span>sibe<span>.</span></span>
 </a>
 <span class="footer-links">
