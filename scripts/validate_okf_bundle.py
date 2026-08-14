@@ -4,12 +4,12 @@ import re
 ROOT = Path('/home/ubuntu/web-dev')
 BUNDLE = ROOT / 'okf'
 assert BUNDLE.is_dir()
-required = [BUNDLE / 'index.md', BUNDLE / 'concepts/index.md', BUNDLE / 'references/index.md', BUNDLE / 'log.md']
+required = [BUNDLE / 'index.md', BUNDLE / 'concepts/index.md', BUNDLE / 'references/index.md', BUNDLE / 'page-map.md', BUNDLE / 'log.md']
 for path in required:
     assert path.exists(), path
 
 files = sorted(BUNDLE.rglob('*.md'))
-assert len(files) == 15, len(files)
+assert len(files) == 16, len(files)
 for path in files:
     text = path.read_text(encoding='utf-8')
     legacy_short = 'llms' + '.txt'
@@ -36,5 +36,5 @@ for path in files:
         assert target_path.exists(), (path, target, target_path)
 
 root_text = (BUNDLE / 'index.md').read_text(encoding='utf-8')
-assert 'concepts/index.md' in root_text and 'references/index.md' in root_text
+assert 'concepts/index.md' in root_text and 'page-map.md' in root_text and 'references/index.md' in root_text
 print(f'okf-bundle-validation=passed markdown_files={len(files)}')

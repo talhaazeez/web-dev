@@ -20,3 +20,7 @@ The input parameter is `question`, a natural-language question about the publish
 - [Contact Sibe](https://sibe-cad.vercel.app/contact/)
 - [Official pricing](https://www.sibe.io/pricing)
 - [Official demo](https://www.sibe.io/demo)
+
+## OKF companion
+
+The page-specific [Open Knowledge Format concept](https://sibe-cad.vercel.app/okf/concepts/ask-sibe.md) carries the structured, frontmatter-based knowledge representation for this page.

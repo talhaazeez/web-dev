@@ -23,3 +23,7 @@ This page is an original summary of Sibe’s public product and company informat
 Official product overview · About and team · Demo and expert review · Security · Pricing
 
 Source: https://www.sibe.io/ and the official Sibe pages linked from this document.
+
+## OKF companion
+
+The page-specific [Open Knowledge Format concept](https://sibe-cad.vercel.app/okf/concepts/contact.md) carries the structured, frontmatter-based knowledge representation for this page.

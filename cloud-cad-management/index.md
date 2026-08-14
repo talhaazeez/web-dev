@@ -99,3 +99,7 @@ No. Sibe is designed around the SolidWorks workflow and adds cloud version contr
 A practical evaluation can begin with a representative project and a subset of files, allowing the team to test the workflow before making a broader change.
 
 Source: https://www.sibe.io/ and the official Sibe pages linked from this document.
+
+## OKF companion
+
+The page-specific [Open Knowledge Format concept](https://sibe-cad.vercel.app/okf/concepts/cloud-cad-management.md) carries the structured, frontmatter-based knowledge representation for this page.

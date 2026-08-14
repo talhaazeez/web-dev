@@ -139,7 +139,7 @@ render({
     'slug': 'bundle', 'title': 'Sibe Open Knowledge Format bundle', 'type': 'bundle',
     'description': 'Portable Sibe CAD knowledge bundle containing public product concepts, trust resources, and provenance.',
     'resource': 'https://sibe-cad.vercel.app/okf/', 'tags': ['sibe', 'okf', 'cloud-cad', 'solidworks', 'public-knowledge'],
-    'body': f'''# Sibe Open Knowledge Format bundle\n\nThis directory is a portable Sibe knowledge bundle made from Markdown concept files with YAML frontmatter. It covers public Sibe CAD product, workflow, contact, editorial, and informational endpoint concepts.\n\nThe bundle follows the plain-Markdown, frontmatter, cross-link, provenance, and progressive-disclosure conventions described in the [GoogleCloudPlatform OKF repository]({OKF_SPEC}). It is an independent Sibe bundle and does not claim formal Google certification.\n\n## Subdirectories\n\n- [Concepts](concepts/index.md) — public Sibe product and trust concepts.\n- [References](references/index.md) — external format and provenance references.\n\n## Freshness\n\nThe bundle was generated and verified by the Sibe Editorial Team on {TODAY.isoformat()}. Concepts carry `stale_after: {STALE_AFTER.isoformat()}` and should be rechecked against their linked sources after that date.'''
+    'body': f'''# Sibe Open Knowledge Format bundle\n\nThis directory is a portable Sibe knowledge bundle made from Markdown concept files with YAML frontmatter. It covers public Sibe CAD product, workflow, contact, editorial, and informational endpoint concepts.\n\nThe bundle follows the plain-Markdown, frontmatter, cross-link, provenance, and progressive-disclosure conventions described in the [GoogleCloudPlatform OKF repository]({OKF_SPEC}). It is an independent Sibe bundle and does not claim formal Google certification.\n\n## Subdirectories\n\n- [Concepts](concepts/index.md) — public Sibe product and trust concepts.\n- [Page map](page-map.md) — explicit mapping from every public webpage to its colocated Markdown page and OKF concept.\n- [References](references/index.md) — external format and provenance references.\n\n## Freshness\n\nThe bundle was generated and verified by the Sibe Editorial Team on {TODAY.isoformat()}. Concepts carry `stale_after: {STALE_AFTER.isoformat()}` and should be rechecked against their linked sources after that date.'''
 }, BUNDLE / 'index.md')
 
 for doc in pages:
@@ -148,6 +148,34 @@ render(reference, BUNDLE / 'references' / 'google-cloud-okf.md')
 
 concept_links = '\n'.join([f'- [{doc["title"]}]({doc["slug"]}.md) — {doc["description"]}' for doc in pages])
 (BUNDLE / 'concepts/index.md').write_text('''# Sibe concepts\n\nThe concepts below describe public Sibe product workflows, trust resources, and informational surfaces. Each file carries YAML frontmatter with type, resource, provenance, verification, status, and freshness metadata.\n\n''' + concept_links + '\n', encoding='utf-8')
+page_links = '\n'.join([f'- [{doc["title"]}](concepts/{doc["slug"]}.md) — webpage: [{doc["resource"]}]({doc["resource"]})' for doc in pages])
+(BUNDLE / 'page-map.md').write_text(f'''---
+type: index
+title: Sibe webpage to OKF concept map
+description: Explicit mapping from every public Sibe webpage to its colocated Markdown representation and page-specific OKF concept.
+resource: https://sibe-cad.vercel.app/okf/page-map.md
+tags: [sibe, okf, pages, mapping]
+generated:
+  by: sibe-editorial-team
+  at: {TODAY.isoformat()}T00:00:00Z
+verified:
+  - by: sibe-editorial-team
+    at: {TODAY.isoformat()}T00:00:00Z
+status: stable
+stale_after: {STALE_AFTER.isoformat()}
+sources:
+  - id: sibe-page
+    resource: https://sibe-cad.vercel.app/sitemap.xml
+    title: Sibe XML sitemap
+    author: Sibe
+    last_modified: {TODAY.isoformat()}
+---
+# Sibe webpage to OKF concept map
+
+Every public Sibe webpage has a colocated Markdown page and a separate page-specific OKF concept file. The mapping below makes the relationship explicit for people and software tools.
+
+{page_links}
+''', encoding='utf-8')
 (BUNDLE / 'references/index.md').write_text(f'''# References\n\n- [Google Cloud Open Knowledge Format reference](google-cloud-okf.md) — Background and repository conventions for portable Markdown knowledge bundles.\n- [GoogleCloudPlatform knowledge-catalog OKF repository]({OKF_SPEC}) — External implementation reference.\n''', encoding='utf-8')
 (BUNDLE / 'log.md').write_text(f'''# Bundle log\n\n- {TODAY.isoformat()} — Initial Sibe OKF bundle generated and verified by the Sibe Editorial Team.\n- {TODAY.isoformat()} — Sources use public Sibe pages and the linked Google Cloud OKF reference.\n''', encoding='utf-8')
 

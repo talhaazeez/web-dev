@@ -28,6 +28,7 @@ The bundle follows the plain-Markdown, frontmatter, cross-link, provenance, and 
 ## Subdirectories
 
 - [Concepts](concepts/index.md) — public Sibe product and trust concepts.
+- [Page map](page-map.md) — explicit mapping from every public webpage to its colocated Markdown page and OKF concept.
 - [References](references/index.md) — external format and provenance references.
 
 ## Freshness
