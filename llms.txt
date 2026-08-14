@@ -40,3 +40,8 @@ This file is a machine-readable overview of the public site. The XML sitemap rem
 ## IndexNow
 
 The site publishes its IndexNow ownership key at https://sibe-cad.vercel.app/834b662808ed78415e21e6edd3940f70482296a32e85195392a2573e3a8acf1f.txt and submits changed public URLs through the repository script at https://github.com/talhaazeez/web-dev/blob/main/scripts/indexnow-submit.sh.
+
+## External machine-readable format reference
+Google Cloud: Introducing the Open Knowledge Format
+https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
+Use this external reference for background on portable, markdown-based knowledge representations. Sibe publishes practical Markdown, JSON-LD, and discovery resources but does not claim formal OKF v0.1 conformance.

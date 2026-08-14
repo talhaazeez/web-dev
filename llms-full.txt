@@ -58,6 +58,11 @@ URL: https://sibe-cad.vercel.app/ask/
 
 The Ask Sibe endpoint provides read-only informational answers about public Sibe CAD content, including cloud CAD management, SolidWorks version control, BOM workflows, browser collaboration, trial details, pricing links, security links, and contact options. It exposes a declarative WebMCP form named `askSibe` and a guarded imperative `document.modelContext.registerTool` implementation when supported by the browser. It does not create accounts, submit purchases, change subscriptions, access private workspace data, or perform destructive actions.
 
+## External machine-readable format reference
+Google Cloud: Introducing the Open Knowledge Format
+https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
+Use this external reference for background on portable, markdown-based knowledge representations. Sibe publishes practical Markdown, JSON-LD, and discovery resources but does not claim formal OKF v0.1 conformance.
+
 ## Agent discovery manifests
 
 UCP capability profile: https://sibe-cad.vercel.app/.well-known/ucp
