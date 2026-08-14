@@ -61,8 +61,8 @@ assert 'Sitemap: https://sibe-cad.vercel.app/sitemap.xml' in robots
 print('robots-ok')
 
 sitemap = (ROOT / 'sitemap.xml').read_text()
-assert sitemap.count('<loc>') == 10
-assert sitemap.count('<lastmod>2026-08-15</lastmod>') == 10
+assert sitemap.count('<loc>') == 11
+assert sitemap.count('<lastmod>2026-08-15</lastmod>') == 11
 print('sitemap-ok')
 
 key_files = [p for p in ROOT.glob('*.txt') if re.fullmatch(r'[A-Fa-f0-9]{64}\.txt', p.name)]
@@ -70,6 +70,6 @@ assert len(key_files) == 1
 assert key_files[0].read_text().strip() == key_files[0].stem
 print(f'indexnow-key-ok={key_files[0].name}')
 
-assert (ROOT / 'llms.txt').exists() and (ROOT / 'llms-full.txt').exists()
+assert (ROOT / 'okf' / 'index.md').exists() and (ROOT / 'okf' / 'concepts' / 'index.md').exists()
 assert (ROOT / 'vercel.json').exists()
 print('discovery-and-indexnow-files-ok')

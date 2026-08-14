@@ -16,7 +16,7 @@ The input parameter is `question`, a natural-language question about the publish
 
 - [Sibe homepage](https://sibe-cad.vercel.app/)
 - [Cloud CAD management](https://sibe-cad.vercel.app/cloud-cad-management/)
-- [Full machine-readable site content](https://sibe-cad.vercel.app/llms-full.txt)
+- [Sibe Open Knowledge Format bundle](https://sibe-cad.vercel.app/okf/index.md)
 - [Contact Sibe](https://sibe-cad.vercel.app/contact/)
 - [Official pricing](https://www.sibe.io/pricing)
 - [Official demo](https://www.sibe.io/demo)

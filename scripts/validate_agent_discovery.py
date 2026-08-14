@@ -32,7 +32,9 @@ sitemap = (ROOT / 'sitemap.xml').read_text()
 assert '<loc>https://sibe-cad.vercel.app/ask/</loc>' in sitemap
 schemamap = (ROOT / 'schemamap.xml').read_text()
 assert 'https://sibe-cad.vercel.app/ask/index.jsonld' in schemamap
-llms = (ROOT / 'llms.txt').read_text()
-for token in ['/ask/', '/.well-known/ucp', '/.well-known/mcp/server-card.json', '/.well-known/agent-card.json', '/.well-known/agent-skills/index.json']:
-    assert token in llms, token
+okf = (ROOT / 'okf' / 'index.md').read_text()
+for token in ['Sibe Open Knowledge Format bundle', 'concepts/index.md', 'references/index.md']:
+    assert token in okf, token
+robots_text = (ROOT / 'robots.txt').read_text()
+assert 'OKF-Bundle: https://sibe-cad.vercel.app/okf/index.md' in robots_text
 print(f'agent-discovery-regression=passed pages={len(html_pages)}')

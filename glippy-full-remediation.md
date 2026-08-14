@@ -15,7 +15,7 @@ The attached CSV contains 66 findings for the cloud CAD management page. The CSV
 | Weak factual verifiability | Add a visible Sources and methodology section with links to official Sibe product, About, security, demo, pricing, and feature pages. |
 | No copyright year | Add a current copyright year to every footer. |
 | Images without lazy loading | Add loading="lazy" to below-fold non-logo images when present; keep above-fold branding eager. |
-| Machine-readable discovery | Retain sitemap, robots, llms.txt, llms-full.txt, manifest, Vercel Link headers, and IndexNow key/submission script. |
+| Machine-readable discovery | Retain sitemap, robots, the OKF bundle, manifest, Vercel Link headers, and IndexNow key/submission script. |
 | No privacy/terms/contact/editorial signals | Link the verified app privacy and terms routes, local Contact page, and local Editorial Methodology page on every page. |
 
 ## Not applicable or not safe to fabricate

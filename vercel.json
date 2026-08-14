@@ -7,6 +7,10 @@
     {
       "source": "/index.jsonld",
       "destination": "/machine-readable/index.jsonld"
+    },
+    {
+      "source": "/okf/",
+      "destination": "/okf/index.md"
     }
   ],
   "headers": [
@@ -15,7 +19,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</llms.txt>; rel=\"describedby\"; type=\"text/markdown\""
+          "value": "<https://sibe-cad.vercel.app/okf/index.md>; rel=\"describedby\"; type=\"text/markdown\""
         },
         {
           "key": "X-Content-Type-Options",
@@ -38,24 +42,6 @@
         {
           "key": "Content-Type",
           "value": "application/manifest+json"
-        }
-      ]
-    },
-    {
-      "source": "/llms.txt",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/markdown; charset=utf-8"
-        }
-      ]
-    },
-    {
-      "source": "/llms-full.txt",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "text/markdown; charset=utf-8"
         }
       ]
     },
