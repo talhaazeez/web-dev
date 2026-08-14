@@ -1,4 +1,14 @@
 {
+  "rewrites": [
+    {
+      "source": "/index.md",
+      "destination": "/machine-readable/index.md"
+    },
+    {
+      "source": "/index.jsonld",
+      "destination": "/machine-readable/index.jsonld"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
