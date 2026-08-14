@@ -182,17 +182,41 @@
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"Sibe Free Trial",
-    "url":"https://sibe-cad.vercel.app/",
-    "description":"Try Sibe for 14 days with no credit card. Cloud PDM, SolidWorks version control, BOM management and browser-based design collaboration.",
-    "about":{
-      "@type":"SoftwareApplication",
-      "name":"Sibe",
-      "applicationCategory":"BusinessApplication",
-      "operatingSystem":"Web, Windows",
-      "url":"https://www.sibe.io/"
-    }
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "@id":"https://sibe-cad.vercel.app/#webpage",
+        "name":"Cloud CAD Management for SolidWorks | Sibe Free Trial",
+        "url":"https://sibe-cad.vercel.app/",
+        "description":"Explore cloud CAD management for SolidWorks with version control, CAD file management, revision approval workflows, BOM management, and browser-based design collaboration.",
+        "about":{"@id":"https://sibe-cad.vercel.app/#software"},
+        "publisher":{"@id":"https://sibe-cad.vercel.app/#organization"}
+      },
+      {
+        "@type":"SoftwareApplication",
+        "@id":"https://sibe-cad.vercel.app/#software",
+        "name":"Sibe",
+        "applicationCategory":"BusinessApplication",
+        "operatingSystem":"Web, Windows",
+        "url":"https://sibe-cad.vercel.app/"
+      },
+      {
+        "@type":"Organization",
+        "@id":"https://sibe-cad.vercel.app/#organization",
+        "name":"Sibe",
+        "url":"https://sibe-cad.vercel.app/"
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"https://sibe-cad.vercel.app/#faq",
+        "mainEntity":[
+          {"@type":"Question","name":"How long does the Sibe free trial last?","acceptedAnswer":{"@type":"Answer","text":"The Sibe free trial lasts 14 days and is promoted as a no-credit-card evaluation with quick setup."}},
+          {"@type":"Question","name":"Does Sibe require on-premise servers or a VPN?","acceptedAnswer":{"@type":"Answer","text":"Sibe is cloud-based, so customer-managed PDM servers are not required for the cloud setup and remote access does not depend on a VPN."}},
+          {"@type":"Question","name":"What is cloud CAD management for SolidWorks?","acceptedAnswer":{"@type":"Answer","text":"Cloud CAD management organizes SolidWorks files, references, versions, revisions, and collaboration in a shared online workspace instead of relying only on local folders or on-premise infrastructure."}},
+          {"@type":"Question","name":"Can suppliers review a SolidWorks design without SolidWorks?","acceptedAnswer":{"@type":"Answer","text":"A secure browser-based review link can let external stakeholders inspect a shared 3D model or drawing without installing SolidWorks, subject to workspace permissions."}}
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -490,6 +514,26 @@
       </div>
     </section>
 
+    <section id="use-cases">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Built for engineering collaboration</span>
+          <h2>One cloud workspace for everyone around the CAD model.</h2>
+          <p>
+            Cloud CAD management is most useful when engineering, project management, purchasing, quality, and suppliers can work from the same controlled product definition.
+            Sibe gives each role the context it needs without asking every stakeholder to install SolidWorks.
+          </p>
+        </div>
+        <div class="role-grid">
+          <article class="role"><strong>Engineering teams</strong><span>Use SolidWorks version control, references, revisions, and check-in/check-out to protect the working design.</span></article>
+          <article class="role"><strong>Project managers</strong><span>See current versions, review status, assigned feedback, and design progress without chasing folders.</span></article>
+          <article class="role"><strong>Purchasing and manufacturing</strong><span>Access structured BOM information and approved revisions for downstream planning and production.</span></article>
+          <article class="role"><strong>Suppliers and clients</strong><span>Review shared 2D and 3D designs in a browser with controlled access and no SolidWorks seat.</span></article>
+        </div>
+        <div class="note"><strong>Explore the workflow:</strong> Start with <a href="/cloud-cad-management/" style="text-decoration:underline">cloud CAD management for SolidWorks</a>, then review <a href="/features/cad-file-management/" style="text-decoration:underline">CAD file management</a>, <a href="/features/solidworks-revision-approval-workflow/" style="text-decoration:underline">revision approval</a>, <a href="/features/solidworks-bom-management/" style="text-decoration:underline">BOM management</a>, <a href="/features/remote-team-collaboration-for-solidworks-teams/" style="text-decoration:underline">remote engineering collaboration</a>, and <a href="/cloud-pdm/solidworks-pdm-migration/" style="text-decoration:underline">SolidWorks PDM migration</a>.</div>
+      </div>
+    </section>
+
     <section class="dark">
       <div class="container">
         <div class="section-head">
@@ -577,6 +621,42 @@
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">A practical alternative to shared drives</span>
+          <h2>Move from file chasing to a controlled cloud PDM workflow.</h2>
+          <p>
+            Shared folders can be familiar, but they leave teams to manage version naming, review status, references, and approval decisions by hand.
+            A cloud PDM workflow gives engineering teams a clearer way to manage CAD data as products become more complex.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="feature-icon">OLD</div>
+            <h3>Shared-drive friction</h3>
+            <p>Teams search across folders, email threads, and spreadsheets to discover which SolidWorks file is current, approved, or ready for manufacturing.</p>
+            <ul>
+              <li>Version names carry too much responsibility.</li>
+              <li>Approval decisions can disappear into email.</li>
+              <li>External reviewers need manual exports or screenshots.</li>
+            </ul>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">PDM</div>
+            <h3>Cloud PDM control</h3>
+            <p>Sibe connects version control, revision approval, product data, and browser-based collaboration around the SolidWorks workflow your team already knows.</p>
+            <ul>
+              <li>Check in and check out files to reduce overwrites.</li>
+              <li>Keep review state and release history visible.</li>
+              <li>Share selected designs securely with non-CAD stakeholders.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="note"><strong>Ready to go deeper?</strong> Compare the workflow in <a href="/features/cad-file-management/" style="text-decoration:underline">CAD file management</a> and <a href="/features/solidworks-revision-approval-workflow/" style="text-decoration:underline">SolidWorks revision approval</a>.</div>
       </div>
     </section>
 

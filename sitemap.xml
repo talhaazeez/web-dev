@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sibe-cad.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://sibe-cad.vercel.app/cloud-cad-management/</loc><priority>0.9</priority></url>
+  <url><loc>https://sibe-cad.vercel.app/features/cad-file-management/</loc><priority>0.8</priority></url>
+  <url><loc>https://sibe-cad.vercel.app/features/solidworks-revision-approval-workflow/</loc><priority>0.8</priority></url>
+  <url><loc>https://sibe-cad.vercel.app/features/solidworks-bom-management/</loc><priority>0.8</priority></url>
+  <url><loc>https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/</loc><priority>0.8</priority></url>
+  <url><loc>https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/</loc><priority>0.8</priority></url>
+</urlset>
