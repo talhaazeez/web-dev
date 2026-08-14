@@ -110,7 +110,21 @@
       "copyrightHolder": {
         "@id": "https://sibe-cad.vercel.app/#organization"
       },
-      "copyrightYear": 2026
+      "copyrightYear": 2026,
+      "sameAs": [
+        "https://www.g2.com/products/sibe/reviews"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 4.9,
+        "bestRating": 5,
+        "ratingCount": 35,
+        "reviewCount": 35,
+        "url": "https://www.g2.com/products/sibe/reviews"
+      },
+      "review": {
+        "@id": "https://sibe-cad.vercel.app/#g2-review-jessica-c"
+      }
     },
     {
       "@type": "FAQPage",
@@ -209,6 +223,31 @@
       ],
       "worksFor": {
         "@id": "https://sibe-cad.vercel.app/#organization"
+      }
+    },
+    {
+      "@type": "Review",
+      "@id": "https://sibe-cad.vercel.app/#g2-review-jessica-c",
+      "name": "Sibe Simplifies File Management with Clear Cloud Version Control",
+      "url": "https://www.g2.com/products/sibe/reviews",
+      "datePublished": "2026-08-14",
+      "reviewBody": "A G2 reviewer described clearer cloud version control, browser access for external partners and non-technical team members, and fewer file-sharing errors, while noting that notification controls could be refined.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": 5
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Jessica C."
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "G2",
+        "url": "https://www.g2.com/"
+      },
+      "itemReviewed": {
+        "@id": "https://sibe-cad.vercel.app/#software"
       }
     }
   ]
