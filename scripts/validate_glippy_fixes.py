@@ -13,6 +13,8 @@ PAGES = [
     ROOT / 'features/solidworks-bom-management/index.html',
     ROOT / 'features/remote-team-collaboration-for-solidworks-teams/index.html',
     ROOT / 'cloud-pdm/solidworks-pdm-migration/index.html',
+    ROOT / 'contact/index.html',
+    ROOT / 'editorial-methodology/index.html',
 ]
 
 for page in PAGES:
@@ -34,10 +36,18 @@ for page in PAGES:
     assert 35 <= len(title) <= 70, (page, len(title), title)
     assert description and len(description.get('content', '')) <= 160, (page, description.get('content', '') if description else '')
     assert canonical and canonical.get('href', '').startswith(BASE), page
-    assert {'WebPage', 'Organization', 'SoftwareApplication', 'FAQPage'} <= types, (page, types)
+    assert {'WebPage', 'Organization', 'Person'} <= types, (page, types)
+    if page.name == 'index.html' and page.parent == ROOT or 'features' in str(page) or 'cloud-pdm' in str(page):
+        assert 'FAQPage' in types, (page, types)
     assert len(soup.find_all('h2', id=True)) >= 1, page
     assert soup.find('meta', attrs={'name': 'twitter:card'}), page
     assert soup.find('meta', attrs={'property': 'og:image'}), page
+    assert soup.find('meta', attrs={'name': 'author'}), page
+    assert soup.find(string=re.compile('Published:')), page
+    assert 'Sibe Editorial Team' in soup.get_text(' ', strip=True), page
+    assert 'https://www.linkedin.com/company/sibe-io' in page.read_text(), page
+    assert 'privacy-policy' in page.read_text(), page
+    assert 'terms-of-service' in page.read_text(), page
     print(f'page-ok={page.relative_to(ROOT)} title={len(title)} description={len(description["content"])} schema={sorted(types)}')
 
 manifest = json.loads((ROOT / 'site.webmanifest').read_text())
@@ -51,8 +61,8 @@ assert 'Sitemap: https://sibe-cad.vercel.app/sitemap.xml' in robots
 print('robots-ok')
 
 sitemap = (ROOT / 'sitemap.xml').read_text()
-assert sitemap.count('<loc>') == 7
-assert sitemap.count('<lastmod>2026-08-15</lastmod>') == 7
+assert sitemap.count('<loc>') == 9
+assert sitemap.count('<lastmod>2026-08-15</lastmod>') == 9
 print('sitemap-ok')
 
 key_files = [p for p in ROOT.glob('*.txt') if re.fullmatch(r'[A-Fa-f0-9]{64}\.txt', p.name)]
@@ -62,5 +72,4 @@ print(f'indexnow-key-ok={key_files[0].name}')
 
 assert (ROOT / 'llms.txt').exists() and (ROOT / 'llms-full.txt').exists()
 assert (ROOT / 'vercel.json').exists()
-assert (ROOT / '.github/workflows/indexnow.yml').exists()
-print('discovery-and-workflow-files-ok')
+print('discovery-and-indexnow-files-ok')

@@ -51,3 +51,15 @@ Sibe is represented as a web-based business application. The public pages descri
 ## Discoverability resources
 
 The XML sitemap is available at https://sibe-cad.vercel.app/sitemap.xml. Robots instructions are at https://sibe-cad.vercel.app/robots.txt. The site publishes JSON-LD structured data on its HTML pages, including WebPage, Organization, SoftwareApplication, BreadcrumbList, and FAQPage entities where applicable.
+
+## Contact Sibe
+
+URL: https://sibe-cad.vercel.app/contact/
+
+The Contact page points readers to the official Sibe demo route for product questions and records the Sibe, Inc. mailing address shown on the official About page: 8 The Green #23150, Dover, DE 19901, United States.
+
+## Editorial methodology
+
+URL: https://sibe-cad.vercel.app/editorial-methodology/
+
+The Editorial Methodology page explains that product and SEO content is checked against official Sibe product, About, security, demo, pricing, and feature pages. It describes original explanations, visible publication and review dates, source linking, accessibility checks, structured data checks, and post-deployment route verification.

@@ -32,6 +32,8 @@ URLS=(
   "https://${HOST}/features/solidworks-bom-management/"
   "https://${HOST}/features/remote-team-collaboration-for-solidworks-teams/"
   "https://${HOST}/cloud-pdm/solidworks-pdm-migration/"
+  "https://${HOST}/contact/"
+  "https://${HOST}/editorial-methodology/"
   "https://${HOST}/sitemap.xml"
   "https://${HOST}/robots.txt"
   "https://${HOST}/llms.txt"

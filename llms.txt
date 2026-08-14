@@ -23,3 +23,6 @@
 ## Update policy
 
 This file is a machine-readable overview of the public site. The XML sitemap remains the authoritative URL inventory for crawl discovery.
+
+- [Contact Sibe](https://sibe-cad.vercel.app/contact/): Verified demo route and Sibe, Inc. mailing address.
+- [Editorial methodology](https://sibe-cad.vercel.app/editorial-methodology/): Sources, review process, update dates, and content-quality checks.
