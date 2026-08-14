@@ -1,0 +1,3 @@
+# Trust-page layout visual QA
+
+The local preview was checked for `/contact/` and `/editorial-methodology/` after the CSS repair. Both pages now show the centered breadcrumb inside the same max-width column as the hero content. The header navigation remains aligned within the centered container because its flex rule is scoped to `header nav`, avoiding interference from the breadcrumb `<nav>`. The Skip to main content control is visible at the top-left with high contrast and remains focusable; on small screens it moves below the sticky header. The hero headings and content cards align to the same page grid.
