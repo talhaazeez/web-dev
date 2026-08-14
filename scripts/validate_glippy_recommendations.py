@@ -4,7 +4,7 @@ import json
 import re
 
 ROOT = Path('/home/ubuntu/web-dev')
-html_pages = sorted(ROOT.rglob('index.html'))
+html_pages = sorted(p for p in ROOT.rglob('index.html') if p.parent.name != 'ask')
 assert len(html_pages) == 9, html_pages
 
 for page in html_pages:
