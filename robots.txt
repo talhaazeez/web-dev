@@ -6,4 +6,11 @@ Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 Sitemap: https://sibe-cad.vercel.app/sitemap.xml
 
+# Agent discovery resources
+Agent-Ask: https://sibe-cad.vercel.app/ask/
+Agent-UCP: https://sibe-cad.vercel.app/.well-known/ucp
+Agent-MCP-Server-Card: https://sibe-cad.vercel.app/.well-known/mcp/server-card.json
+Agent-A2A-Card: https://sibe-cad.vercel.app/.well-known/agent-card.json
+Agent-Skills: https://sibe-cad.vercel.app/.well-known/agent-skills/index.json
+
 # IndexNow ownership key location: https://sibe-cad.vercel.app/834b662808ed78415e21e6edd3940f70482296a32e85195392a2573e3a8acf1f.txt

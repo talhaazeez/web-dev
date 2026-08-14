@@ -1,0 +1,14 @@
+{
+  "profile": "informational-only",
+  "version": "1.0",
+  "merchant": {
+    "name": "Sibe",
+    "url": "https://www.sibe.io/"
+  },
+  "commerce": {
+    "enabled": false,
+    "checkoutEndpoint": null,
+    "orderManagementEndpoint": null
+  },
+  "note": "This static website publishes product information and an informational WebMCP /ask/ endpoint. It does not expose UCP commerce, checkout, payment, or order-management capabilities."
+}

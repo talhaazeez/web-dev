@@ -26,6 +26,16 @@ This file is a machine-readable overview of the public site. The XML sitemap rem
 
 - [Contact Sibe](https://sibe-cad.vercel.app/contact/): Verified demo route and Sibe, Inc. mailing address.
 - [Editorial methodology](https://sibe-cad.vercel.app/editorial-methodology/): Sources, review process, update dates, and content-quality checks.
+- [Ask Sibe](https://sibe-cad.vercel.app/ask/): Read-only natural-language endpoint for public Sibe CAD information with declarative and guarded imperative WebMCP support.
+
+## Agent discovery
+
+- Natural-language endpoint: https://sibe-cad.vercel.app/ask/
+- UCP capability profile: https://sibe-cad.vercel.app/.well-known/ucp
+- MCP server card: https://sibe-cad.vercel.app/.well-known/mcp/server-card.json
+- A2A agent card: https://sibe-cad.vercel.app/.well-known/agent-card.json
+- Agent Skills index: https://sibe-cad.vercel.app/.well-known/agent-skills/index.json
+- Scope: informational and read-only; no checkout, payment, order management, private workspace access, or destructive actions are exposed.
 
 ## IndexNow
 

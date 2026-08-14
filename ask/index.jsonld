@@ -1,0 +1,74 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sibe-cad.vercel.app/ask/#webpage",
+      "name": "Ask Sibe | Natural-Language CAD Information Endpoint",
+      "url": "https://sibe-cad.vercel.app/ask/",
+      "description": "An informational natural-language endpoint for public Sibe CAD website resources.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://sibe-cad.vercel.app/#website"
+      },
+      "about": {
+        "@id": "https://sibe-cad.vercel.app/#software"
+      },
+      "dateModified": "2026-08-15",
+      "publisher": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://sibe-cad.vercel.app/ask/?q={question}",
+        "query-input": "required name=question"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://sibe-cad.vercel.app/ask/#webapplication",
+      "name": "Ask Sibe",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "url": "https://sibe-cad.vercel.app/ask/",
+      "description": "Natural-language informational interface for published Sibe CAD resources.",
+      "isAccessibleForFree": true,
+      "featureList": [
+        "Declarative WebMCP askSibe form",
+        "Guarded imperative document.modelContext tool registration",
+        "Natural-language answers about published Sibe CAD resources"
+      ],
+      "publisher": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sibe-cad.vercel.app/#organization",
+      "name": "Sibe",
+      "url": "https://www.sibe.io/",
+      "logo": "https://sibe-cad.vercel.app/assets/sibe-logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://sibe-cad.vercel.app/contact/",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://sibe-cad.vercel.app/#editorial-team",
+      "name": "Sibe Editorial Team",
+      "url": "https://www.sibe.io/about",
+      "sameAs": [
+        "https://www.linkedin.com/company/sibe-io"
+      ],
+      "worksFor": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      }
+    }
+  ]
+}

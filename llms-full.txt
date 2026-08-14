@@ -52,6 +52,19 @@ Sibe is represented as a web-based business application. The public pages descri
 
 The XML sitemap is available at https://sibe-cad.vercel.app/sitemap.xml. Robots instructions are at https://sibe-cad.vercel.app/robots.txt. The site publishes JSON-LD structured data on its HTML pages, including WebPage, Organization, SoftwareApplication, BreadcrumbList, and FAQPage entities where applicable.
 
+## Natural-language information endpoint
+
+URL: https://sibe-cad.vercel.app/ask/
+
+The Ask Sibe endpoint provides read-only informational answers about public Sibe CAD content, including cloud CAD management, SolidWorks version control, BOM workflows, browser collaboration, trial details, pricing links, security links, and contact options. It exposes a declarative WebMCP form named `askSibe` and a guarded imperative `document.modelContext.registerTool` implementation when supported by the browser. It does not create accounts, submit purchases, change subscriptions, access private workspace data, or perform destructive actions.
+
+## Agent discovery manifests
+
+UCP capability profile: https://sibe-cad.vercel.app/.well-known/ucp
+MCP server card: https://sibe-cad.vercel.app/.well-known/mcp/server-card.json
+A2A agent card: https://sibe-cad.vercel.app/.well-known/agent-card.json
+Agent Skills index: https://sibe-cad.vercel.app/.well-known/agent-skills/index.json
+
 ## Contact Sibe
 
 URL: https://sibe-cad.vercel.app/contact/

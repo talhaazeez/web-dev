@@ -34,6 +34,12 @@ URLS=(
   "https://${HOST}/cloud-pdm/solidworks-pdm-migration/"
   "https://${HOST}/contact/"
   "https://${HOST}/editorial-methodology/"
+  "https://${HOST}/ask/"
+  "https://${HOST}/.well-known/ucp"
+  "https://${HOST}/.well-known/mcp/server-card.json"
+  "https://${HOST}/.well-known/agent-card.json"
+  "https://${HOST}/.well-known/agent-skills/index.json"
+  "https://${HOST}/webmcp-agent.js"
   "https://${HOST}/sitemap.xml"
   "https://${HOST}/robots.txt"
   "https://${HOST}/llms.txt"
@@ -45,6 +51,8 @@ URLS=(
   "https://${HOST}/editorial-methodology/index.md"
   "https://${HOST}/cloud-cad-management/index.md"
   "https://${HOST}/cloud-cad-management/index.jsonld"
+  "https://${HOST}/ask/index.md"
+  "https://${HOST}/ask/index.jsonld"
 )
 
 PAYLOAD="$(printf '%s\n' "${URLS[@]}" | sed 's/.*/"&"/' | paste -sd, -)"

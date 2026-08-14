@@ -61,8 +61,8 @@ assert 'Sitemap: https://sibe-cad.vercel.app/sitemap.xml' in robots
 print('robots-ok')
 
 sitemap = (ROOT / 'sitemap.xml').read_text()
-assert sitemap.count('<loc>') == 9
-assert sitemap.count('<lastmod>2026-08-15</lastmod>') == 9
+assert sitemap.count('<loc>') == 10
+assert sitemap.count('<lastmod>2026-08-15</lastmod>') == 10
 print('sitemap-ok')
 
 key_files = [p for p in ROOT.glob('*.txt') if re.fullmatch(r'[A-Fa-f0-9]{64}\.txt', p.name)]

@@ -1,0 +1,33 @@
+{
+  "name": "Sibe CAD Information Server",
+  "version": "1.0.0",
+  "description": "Public informational resources for Sibe cloud CAD management and SolidWorks workflows.",
+  "transport": "https",
+  "endpoint": "https://sibe-cad.vercel.app/ask/",
+  "tools": [
+    {
+      "name": "askSibe",
+      "description": "Answer an informational question using the published Sibe CAD website resources.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "description": "A question about Sibe cloud CAD management, SolidWorks workflows, the free trial, pricing, security, or contact options."
+          }
+        },
+        "required": ["question"]
+      },
+      "url": "https://sibe-cad.vercel.app/ask/",
+      "readOnly": true
+    }
+  ],
+  "authentication": {
+    "required": false
+  },
+  "capabilities": {
+    "transactional": false,
+    "privateDataAccess": false,
+    "naturalLanguageQuery": true
+  }
+}

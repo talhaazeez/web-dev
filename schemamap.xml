@@ -9,4 +9,5 @@
   <resource><loc>https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/index.jsonld</loc><page>https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/</page></resource>
   <resource><loc>https://sibe-cad.vercel.app/contact/index.jsonld</loc><page>https://sibe-cad.vercel.app/contact/</page></resource>
   <resource><loc>https://sibe-cad.vercel.app/editorial-methodology/index.jsonld</loc><page>https://sibe-cad.vercel.app/editorial-methodology/</page></resource>
+  <resource><loc>https://sibe-cad.vercel.app/ask/index.jsonld</loc><page>https://sibe-cad.vercel.app/ask/</page></resource>
 </schemamap>
