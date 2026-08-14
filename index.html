@@ -203,7 +203,17 @@
       "@id": "https://sibe-cad.vercel.app/#website",
       "name": "Sibe CAD Management",
       "url": "https://sibe-cad.vercel.app/",
+      "description": "Cloud CAD management and engineering collaboration for SolidWorks teams, including version control, revision workflows, BOMs, and browser-based design review.",
       "inLanguage": "en",
+      "license": "https://sibe-cad.vercel.app/license.xml",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://sibe-cad.vercel.app/ask/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
       "publisher": {
         "@id": "https://sibe-cad.vercel.app/#organization"
       }
@@ -243,7 +253,16 @@
       "@id": "https://sibe-cad.vercel.app/#organization",
       "name": "Sibe",
       "url": "https://www.sibe.io/",
+      "description": "Sibe is an engineering collaboration platform with a native SolidWorks add-in for managing CAD documents, reviewing revisions, and collaborating on 3D designs.",
       "logo": "https://sibe-cad.vercel.app/assets/sibe-logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "8 The Green #23150",
+        "addressLocality": "Dover",
+        "addressRegion": "DE",
+        "postalCode": "19901",
+        "addressCountry": "US"
+      },
       "sameAs": [
         "https://www.linkedin.com/company/sibe-io"
       ],
@@ -259,6 +278,7 @@
       "@type": "SoftwareApplication",
       "@id": "https://sibe-cad.vercel.app/#software",
       "name": "Sibe",
+      "description": "Cloud-based engineering collaboration for SolidWorks teams, with version control, CAD file management, revision approvals, BOM management, and browser-based design review.",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web, Windows",
       "url": "https://sibe-cad.vercel.app/",
@@ -277,15 +297,23 @@
         "url": "https://app.sibe.io/",
         "availability": "https://schema.org/InStock"
       },
-      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+      "image": "https://sibe-cad.vercel.app/assets/sibe-logo.png",
+      "license": "https://sibe-cad.vercel.app/license.xml",
+      "copyrightHolder": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      },
+      "copyrightYear": 2026
     },
     {
       "@type": "FAQPage",
       "@id": "https://sibe-cad.vercel.app/#faq",
+      "description": "Answers to common questions about the Sibe free trial, cloud CAD management, SolidWorks version control, BOM workflows, and browser-based design review.",
       "mainEntity": [
         {
           "@type": "Question",
           "name": "How long does the Sibe free trial last?",
+          "text": "How long does the Sibe free trial last?",
+          "dateCreated": "2026-08-15",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The Sibe free trial lasts 14 days. Sibe currently promotes the trial as a no-credit-card evaluation with quick setup."
@@ -294,6 +322,8 @@
         {
           "@type": "Question",
           "name": "Do I need a credit card to sign up?",
+          "text": "Do I need a credit card to sign up?",
+          "dateCreated": "2026-08-15",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "No. Sibe states that no credit card is required to start the 14-day trial."
@@ -302,6 +332,8 @@
         {
           "@type": "Question",
           "name": "Does Sibe require on-premise servers or a VPN?",
+          "text": "Does Sibe require on-premise servers or a VPN?",
+          "dateCreated": "2026-08-15",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "No. Sibe is cloud-based, so customer-managed PDM servers are not required for the cloud setup, and remote access does not depend on a VPN."
@@ -310,6 +342,8 @@
         {
           "@type": "Question",
           "name": "Can I export the automatically generated BOM to Excel?",
+          "text": "Can I export the automatically generated BOM to Excel?",
+          "dateCreated": "2026-08-15",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Sibe supports BOM management and file exports for downstream workflows. Confirm the exact export format and current plan capabilities for your specific manufacturing workflow."
@@ -318,6 +352,8 @@
         {
           "@type": "Question",
           "name": "Can non-CAD users access Sibe to review designs?",
+          "text": "Can non-CAD users access Sibe to review designs?",
+          "dateCreated": "2026-08-15",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes. Sibe supports browser-based 2D and 3D collaboration, allowing non-CAD stakeholders and external partners to review shared designs without needing a SolidWorks seat."
@@ -326,6 +362,8 @@
         {
           "@type": "Question",
           "name": "What is cloud CAD management for SolidWorks?",
+          "text": "What is cloud CAD management for SolidWorks?",
+          "dateCreated": "2026-08-15",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Cloud CAD management organizes SolidWorks files, references, versions, revisions, and collaboration in a shared online workspace instead of relying only on local folders or on-premise infrastructure."
@@ -334,6 +372,8 @@
         {
           "@type": "Question",
           "name": "How does SolidWorks version control prevent overwrites?",
+          "text": "How does SolidWorks version control prevent overwrites?",
+          "dateCreated": "2026-08-15",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "A check-in/check-out workflow makes the editing owner visible and helps prevent two engineers from changing the same file at the same time. Each check-in can create a new version with a record of the change."
@@ -342,6 +382,8 @@
         {
           "@type": "Question",
           "name": "Can suppliers review a SolidWorks design without SolidWorks?",
+          "text": "Can suppliers review a SolidWorks design without SolidWorks?",
+          "dateCreated": "2026-08-15",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "A secure browser-based review link can let external stakeholders inspect a shared 3D model or drawing without installing SolidWorks. Commenting and download controls depend on workspace permissions and plan settings."
@@ -367,6 +409,8 @@
 <link href="/index.md" rel="alternate" type="text/markdown"/>
 <link href="/feed.xml" rel="alternate" title="Sibe updates" type="application/rss+xml"/>
 <meta content="All rights reserved. Contact Sibe for reuse permissions." name="content-license"/>
+<meta content="All rights reserved. Contact Sibe for reuse permissions or licensing questions." name="rights"/>
+<link href="/license.xml" rel="copyright"/>
 <link href="/schemamap.xml" rel="alternate" title="Sibe schema map" type="application/xml"/><link href="/index.jsonld" rel="alternate" type="application/ld+json"/><link href="/license.xml" rel="license" type="application/xml"/><link href="/ask/" rel="nlweb" title="Sibe natural-language information endpoint"/>
 <link href="/.well-known/mcp/server-card.json" rel="mcp-server-card" title="Sibe MCP server card"/>
 <link href="/.well-known/agent-card.json" rel="agent-card" title="Sibe A2A agent card"/>
@@ -904,7 +948,7 @@
       <a href="/features/remote-team-collaboration-for-solidworks-teams/">Collaboration</a> ·
       <a href="https://www.sibe.io/pricing">Pricing</a> ·
       <a href="https://www.sibe.io/demo">Demo</a> · <a href="https://www.sibe.io/about">About</a> · <a href="https://www.sibe.io/data-security">Security</a>
-     · <a href="/contact/">Contact</a> · <a href="/editorial-methodology/">Editorial methodology</a> · <a href="https://app.sibe.io/privacy-policy">Privacy</a> · <a href="https://app.sibe.io/terms-of-service">Terms</a></span><span class="copyright">© 2026 Sibe, Inc. · All rights reserved.</span>
+     · <a href="/contact/">Contact</a> · <a href="/editorial-methodology/">Editorial methodology</a> · <a href="https://app.sibe.io/privacy-policy">Privacy</a> · <a href="https://app.sibe.io/terms-of-service">Terms</a></span><span class="copyright">© 2026 Sibe, Inc. · All rights reserved. · <a href="/license.xml">Content rights</a></span>
 </div>
 </footer>
 </body>
