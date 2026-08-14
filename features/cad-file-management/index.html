@@ -7,14 +7,135 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 <title>CAD File Management with a SolidWorks Add-in | Sibe</title>
-<meta name="description" content="Manage SolidWorks CAD files, references, metadata, versions, and reviews in one cloud workspace with Sibe's native add-in.">
+<meta name="author" content="Sibe Editorial Team">
+  <meta name="date-modified" content="2026-08-15">
+  <meta name="description" content="Manage SolidWorks CAD files, references, metadata, versions, and reviews in one cloud workspace with Sibe.">
 <link rel="canonical" href="https://sibe-cad.vercel.app/features/cad-file-management/">
-<meta property="og:title" content="CAD File Management with a SolidWorks Add-in | Sibe"><meta property="og:description" content="Keep SolidWorks files, references, versions, and product data organized in the cloud."><meta property="og:url" content="https://sibe-cad.vercel.app/features/cad-file-management/"><meta property="og:type" content="website">
+<meta property="og:title" content="CAD File Management with a SolidWorks Add-in | Sibe"><meta property="og:description" content="Keep SolidWorks files, references, versions, and product data organized in the cloud."><meta property="og:url" content="https://sibe-cad.vercel.app/features/cad-file-management/"><meta property="og:image" content="https://sibe-cad.vercel.app/assets/sibe-logo.png">
+<meta property="og:image:alt" content="Sibe logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CAD File Management with a SolidWorks Add-in | Sibe">
+<meta name="twitter:description" content="Manage SolidWorks CAD files, references, metadata, versions, and reviews in one cloud workspace with Sibe.">
+<meta name="twitter:image" content="https://sibe-cad.vercel.app/assets/sibe-logo.png">
+<meta property="og:type" content="website">
 <style>:root{--p:#7114b8;--pk:#df3f83;--ink:#17121d;--muted:#6d6575;--line:#e9e1ee;--paper:#fbf9fc;--max:1120px}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7}a{color:inherit}.container{width:min(calc(100% - 36px),var(--max));margin:auto}header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2}nav{min-height:72px;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:9px;font-size:24px;font-weight:900;text-decoration:none}.brand-logo{width:34px;height:34px;object-fit:contain}.brand-wordmark{line-height:1}.brand-wordmark span{color:var(--p)}.navcta{background:var(--ink);color:#fff!important;padding:9px 13px;border-radius:10px;font-weight:800}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-brand{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:#fff;font-size:19px;font-weight:900}.footer-brand img{width:28px;height:28px;object-fit:contain}.footer-brand span span{color:#fff}.footer-links{display:inline-flex;gap:7px;flex-wrap:wrap;align-items:center}.brand span{color:var(--p)}.navlinks{display:flex;gap:18px;font-size:14px}.navlinks a{text-decoration:none}.hero{padding:88px 0 70px;background:linear-gradient(135deg,#fff,#f4eafd)}.eyebrow,.kicker{color:var(--p);font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:12px}.hero h1{font-size:clamp(42px,6vw,70px);line-height:1.05;letter-spacing:-.05em;max-width:850px;margin:18px 0}.hero p{font-size:19px;color:var(--muted);max-width:780px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{background:linear-gradient(100deg,var(--p),var(--pk));color:#fff;text-decoration:none;border-radius:12px;padding:13px 19px;font-weight:800}.btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}section{padding:72px 0}.head{max-width:800px;margin-bottom:32px}.head h2{font-size:clamp(32px,4vw,50px);line-height:1.1;letter-spacing:-.04em;margin:12px 0}.head p,.card p,.card li{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px}.card h3{font-size:23px;margin-top:0}.band{background:#17121d;color:#fff}.band p{color:#d5cbd9}.faq details{border-top:1px solid var(--line);padding:18px 0}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted)}footer{padding:28px 0;background:#0f0b13;color:#c4bac8;font-size:13px}@media(max-width:700px){.navlinks{display:none}.grid{grid-template-columns:1fr}}
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CAD File Management with a SolidWorks Add-in","url":"https://sibe-cad.vercel.app/features/cad-file-management/","about":{"@type":"SoftwareApplication","name":"Sibe","applicationCategory":"BusinessApplication"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sibe-cad.vercel.app/"},{"@type":"ListItem","position":2,"name":"CAD File Management","item":"https://sibe-cad.vercel.app/features/cad-file-management/"}]}}</script>
+
+.skip-link{position:absolute;left:12px;top:-48px;z-index:1000;background:#17121d;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:800}.skip-link:focus{top:12px}.breadcrumb{width:min(calc(100% - 36px),1120px);margin:0 auto;padding:18px 0 0;color:#6d6575;font-size:13px}.breadcrumb a{color:#7114b8;text-decoration:underline}.meta-line{width:min(calc(100% - 36px),1120px);margin:8px auto 0;color:#6d6575;font-size:13px}.contents{width:min(calc(100% - 36px),1120px);margin:24px auto 0;padding:22px;border:1px solid #e9e1ee;border-radius:16px;background:#fff}.contents h2{font-size:20px;margin:0 0 8px}.contents ul{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0;padding-left:18px}.contents a{color:#7114b8}.definition-list{display:grid;grid-template-columns:180px 1fr;gap:12px 20px;margin:0}.definition-list dt{font-weight:800;color:#7114b8}.definition-list dd{margin:0;color:#6d6575}.comparison{width:100%;border-collapse:collapse;margin-top:20px;background:#fff}.comparison th,.comparison td{border:1px solid #e9e1ee;text-align:left;padding:12px;vertical-align:top}.comparison th{background:#f3eafd}.step-list{counter-reset:step;display:grid;gap:12px;padding:0;list-style:none}.step-list li{counter-increment:step;background:#fff;border:1px solid #e9e1ee;border-radius:12px;padding:16px 18px 16px 52px;position:relative}.step-list li:before{content:counter(step);position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:8px;background:#17121d;color:#fff;text-align:center;font-weight:800}@media(max-width:700px){.definition-list{grid-template-columns:1fr}.comparison{font-size:13px;display:block;overflow-x:auto}.contents ul{display:block}.contents li{margin:6px 0}}
+
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sibe-cad.vercel.app/features/cad-file-management/#webpage",
+      "name": "CAD File Management with a SolidWorks Add-in",
+      "url": "https://sibe-cad.vercel.app/features/cad-file-management/",
+      "description": "Manage SolidWorks CAD files, references, metadata, versions, and reviews in one cloud workspace with Sibe.",
+      "inLanguage": "en",
+      "dateModified": "2026-08-15",
+      "author": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      },
+      "publisher": {
+        "@id": "https://sibe-cad.vercel.app/#organization"
+      },
+      "about": {
+        "@id": "https://sibe-cad.vercel.app/#software"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          ".hero p"
+        ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sibe-cad.vercel.app/#organization",
+      "name": "Sibe",
+      "url": "https://www.sibe.io/",
+      "logo": "https://sibe-cad.vercel.app/assets/sibe-logo.png"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://sibe-cad.vercel.app/#software",
+      "name": "Sibe",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Windows",
+      "url": "https://sibe-cad.vercel.app/",
+      "featureList": [
+        "SolidWorks version control",
+        "CAD file management",
+        "Revision approval workflows",
+        "BOM management",
+        "Browser-based 3D design collaboration"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "name": "14-day free trial",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://app.sibe.io/",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sibe-cad.vercel.app/features/cad-file-management/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://sibe-cad.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CAD File Management",
+          "item": "https://sibe-cad.vercel.app/features/cad-file-management/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sibe-cad.vercel.app/features/cad-file-management/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Sibe work with existing SolidWorks files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sibe is designed to connect with existing SolidWorks projects through its native add-in so teams can evaluate the workflow on real files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Sibe keep assembly references organized?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The workflow is built around related parts, drawings, and subassemblies rather than treating every CAD file as an isolated document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can non-CAD teammates search or review design data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teams can use browser-based collaboration and controlled sharing so non-CAD stakeholders can review selected product information without installing SolidWorks."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
-<body><header><div class="container"><nav><a class="brand" href="/" aria-label="Sibe home">
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a><header><div class="container"><nav><a class="brand" href="/" aria-label="Sibe home">
   <img class="brand-logo" src="/assets/sibe-logo.png" alt="Sibe logo" width="34" height="34">
   <span class="brand-wordmark">sibe<span>.</span></span>
 </a><div class="navlinks">
@@ -26,10 +147,12 @@
   <a href="https://www.sibe.io/pricing">Pricing</a>
   <a class="navcta" href="https://app.sibe.io/">Start free trial</a>
 </div></nav></div></header>
-<main><section class="hero"><div class="container"><span class="eyebrow">CAD file management with a SolidWorks add-in</span><h1>Make every SolidWorks file easier to find, trust, and review.</h1><p>Manage CAD files, references, metadata, versions, and collaboration in a cloud workspace that connects to the SolidWorks environment your engineering team already uses.</p><div class="actions"><a class="btn" href="https://app.sibe.io/">Start the 14-day free trial</a><a class="btn alt" href="/cloud-cad-management/">Explore cloud CAD management</a></div></div></section>
-<section><div class="container"><div class="head"><span class="kicker">Connected CAD data</span><h2>File management that understands assemblies, not just filenames.</h2><p>SolidWorks projects contain parts, drawings, subassemblies, and references that must stay together. Sibe is designed to keep that product context visible while teams work, review, and release.</p></div><div class="grid"><article class="card"><h3>Reference-aware file structure</h3><p>Keep part and subassembly relationships visible so teams can understand the product definition rather than opening disconnected files one by one.</p></article><article class="card"><h3>Version history and rollback</h3><p>Record who changed a file and when, then return to an earlier version when a design decision or review requires it.</p></article><article class="card"><h3>Advanced search and metadata</h3><p>Make part numbers, descriptions, materials, project identifiers, and other useful properties easier to discover outside the CAD window.</p></article><article class="card"><h3>Check-in and check-out</h3><p>Reduce accidental overwrites by making editing ownership visible and keeping the latest checked-in version available to the team.</p></article></div></div></section>
-<section class="band"><div class="container"><div class="head"><span class="kicker">Designed for real projects</span><h2>Start with one assembly and measure the difference.</h2><p>Connect the add-in, check in a representative project, inspect the references and metadata, then invite a non-CAD reviewer to test the browser workflow.</p></div><div class="actions"><a class="btn" href="/features/solidworks-bom-management/">Explore BOM management</a><a class="btn alt" href="https://www.sibe.io/demo">Book a product demo</a></div></div></section>
-<section class="faq"><div class="container"><div class="head"><span class="kicker">FAQ</span><h2>CAD file management questions</h2></div><details open><summary>Does Sibe work with existing SolidWorks files?</summary><p>Sibe is designed to connect with existing SolidWorks projects through its native add-in so teams can evaluate the workflow on real files.</p></details><details><summary>Can Sibe keep assembly references organized?</summary><p>Yes. The workflow is built around related parts, drawings, and subassemblies rather than treating every CAD file as an isolated document.</p></details><details><summary>Can non-CAD teammates search or review design data?</summary><p>Teams can use browser-based collaboration and controlled sharing so non-CAD stakeholders can review selected product information without installing SolidWorks.</p></details></div></section></main><footer>
+<main id="main-content"><section class="hero"><div class="container"><span class="eyebrow">CAD file management with a SolidWorks add-in</span><h1>Make every SolidWorks file easier to find, trust, and review.</h1><p>Manage CAD files, references, metadata, versions, and collaboration in a cloud workspace that connects to the SolidWorks environment your engineering team already uses.</p><div class="actions"><a class="btn" href="https://app.sibe.io/">Start the 14-day free trial</a><a class="btn alt" href="/cloud-cad-management/">Explore cloud CAD management</a></div></div></section>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="https://sibe-cad.vercel.app/">Home</a> <span aria-hidden="true">›</span> <span>CAD File Management</span></nav><p class="meta-line"><strong>Reviewed and updated:</strong> 15 August 2026 · <a href="https://www.sibe.io/demo">Talk to a Sibe expert</a></p>
+<nav class="contents" aria-labelledby="contents-title"><h2 id="contents-title">On this page</h2><ul><li><a href="#file-management-that-understands-assemblies-not-just-filenames">File management that understands assemblies, not just filenames.</a></li><li><a href="#start-with-one-assembly-and-measure-the-difference">Start with one assembly and measure the difference.</a></li><li><a href="#cad-file-management-questions">CAD file management questions</a></li></ul></nav>
+<section><div class="container"><div class="head"><span class="kicker">Connected CAD data</span><h2 id="file-management-that-understands-assemblies-not-just-filenames">File management that understands assemblies, not just filenames.</h2><p>SolidWorks projects contain parts, drawings, subassemblies, and references that must stay together. Sibe is designed to keep that product context visible while teams work, review, and release.</p></div><div class="grid"><article class="card"><h3>Reference-aware file structure</h3><p>Keep part and subassembly relationships visible so teams can understand the product definition rather than opening disconnected files one by one.</p></article><article class="card"><h3>Version history and rollback</h3><p>Record who changed a file and when, then return to an earlier version when a design decision or review requires it.</p></article><article class="card"><h3>Advanced search and metadata</h3><p>Make part numbers, descriptions, materials, project identifiers, and other useful properties easier to discover outside the CAD window.</p></article><article class="card"><h3>Check-in and check-out</h3><p>Reduce accidental overwrites by making editing ownership visible and keeping the latest checked-in version available to the team.</p></article></div></div></section>
+<section class="band"><div class="container"><div class="head"><span class="kicker">Designed for real projects</span><h2 id="start-with-one-assembly-and-measure-the-difference">Start with one assembly and measure the difference.</h2><p>Connect the add-in, check in a representative project, inspect the references and metadata, then invite a non-CAD reviewer to test the browser workflow.</p></div><div class="actions"><a class="btn" href="/features/solidworks-bom-management/">Explore BOM management</a><a class="btn alt" href="https://www.sibe.io/demo">Book a product demo</a></div></div></section>
+<section class="faq"><div class="container"><div class="head"><span class="kicker">FAQ</span><h2 id="cad-file-management-questions">CAD file management questions</h2></div><details open><summary>Does Sibe work with existing SolidWorks files?</summary><p>Sibe is designed to connect with existing SolidWorks projects through its native add-in so teams can evaluate the workflow on real files.</p></details><details><summary>Can Sibe keep assembly references organized?</summary><p>Yes. The workflow is built around related parts, drawings, and subassemblies rather than treating every CAD file as an isolated document.</p></details><details><summary>Can non-CAD teammates search or review design data?</summary><p>Teams can use browser-based collaboration and controlled sharing so non-CAD stakeholders can review selected product information without installing SolidWorks.</p></details></div></section></main><footer>
   <div class="container footer-row">
     <a class="footer-brand" href="/" aria-label="Sibe home">
       <img src="/assets/sibe-logo.png" alt="Sibe logo" width="28" height="28">
@@ -42,7 +165,7 @@
       <a href="/features/solidworks-revision-approval-workflow/">Revision approvals</a> ·
       <a href="/features/remote-team-collaboration-for-solidworks-teams/">Collaboration</a> ·
       <a href="https://www.sibe.io/pricing">Pricing</a> ·
-      <a href="https://www.sibe.io/demo">Demo</a>
+      <a href="https://www.sibe.io/demo">Demo</a> · <a href="https://www.sibe.io/about">About</a> · <a href="https://www.sibe.io/data-security">Security</a>
     </span>
   </div>
 </footer></body></html>

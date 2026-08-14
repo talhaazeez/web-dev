@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Emerging crawler preference convention; this does not replace robots rules.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
 Sitemap: https://sibe-cad.vercel.app/sitemap.xml

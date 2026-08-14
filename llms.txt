@@ -1,0 +1,25 @@
+# Sibe
+
+> Sibe is a cloud CAD management workspace for SolidWorks teams. It connects SolidWorks version control, CAD file management, revision approval workflows, BOM data, and browser-based design collaboration.
+
+## Canonical pages
+
+- [Sibe cloud CAD management homepage](https://sibe-cad.vercel.app/): Product overview for cloud CAD management for SolidWorks.
+- [Cloud CAD management for SolidWorks teams](https://sibe-cad.vercel.app/cloud-cad-management/): Version control, remote access, browser reviews, product data, and evaluation workflow.
+- [CAD file management](https://sibe-cad.vercel.app/features/cad-file-management/): SolidWorks files, references, metadata, versions, and review workflow.
+- [SolidWorks revision approval workflow](https://sibe-cad.vercel.app/features/solidworks-revision-approval-workflow/): In Progress, Pending Approval, Released, review notes, and release history.
+- [SolidWorks BOM management](https://sibe-cad.vercel.app/features/solidworks-bom-management/): Assembly structure, part metadata, version-aware product data, and manufacturing exports.
+- [Remote engineering collaboration](https://sibe-cad.vercel.app/features/remote-team-collaboration-for-solidworks-teams/): Browser-based 2D/3D reviews, controlled sharing, and distributed team collaboration.
+- [SolidWorks PDM migration](https://sibe-cad.vercel.app/cloud-pdm/solidworks-pdm-migration/): A phased evaluation approach for moving from traditional PDM workflows toward cloud CAD management.
+
+## Entity and product links
+
+- Product trial: https://app.sibe.io/
+- Product website: https://www.sibe.io/
+- Demo: https://www.sibe.io/demo
+- Pricing: https://www.sibe.io/pricing
+- Security: https://www.sibe.io/data-security
+
+## Update policy
+
+This file is a machine-readable overview of the public site. The XML sitemap remains the authoritative URL inventory for crawl discovery.
